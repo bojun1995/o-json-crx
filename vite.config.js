@@ -22,7 +22,7 @@ const crxOptions = {
 export default defineConfig({
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`
+      '@/': `${path.resolve(__dirname, 'src')}/`
     }
   },
   plugins: [vue(), crx(crxOptions), isProd && zip({ dir: "releases" })]

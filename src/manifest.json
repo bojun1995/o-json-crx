@@ -8,8 +8,11 @@
     "128": "src/icons/128x128.png"
   },
   "action": {
-    "default_title": "Click",
+    "default_title": "o-tools",
     "default_popup": "src/popup/index.html"
+  },
+  "chrome_url_overrides": {
+    "newtab": "src/override/index.html"
   },
   "content_scripts": [
     {
