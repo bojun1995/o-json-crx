@@ -1,27 +1,8 @@
-<script setup>
-import Container from '~/components/Container.vue'
-</script>
-
 <template>
-  <div class="options">
-    <Container></Container>
-  </div>
+  <div>options</div>
 </template>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-}
-html, body, #app {
-  height: 100%;
-  width: 100%;
-}
-</style>
+<script setup>
+</script>
 
-<style lang="scss" scoped>
-.options {
-  height: 100%;
-  background: #202124;
-}
-</style>
+<style lang="scss" rel="stylesheet/scss" type="text/scss" scoped></style>

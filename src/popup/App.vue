@@ -1,14 +1,9 @@
-<script setup>
-import Container from '~/components/Container.vue'
-</script>
-
 <template>
-  <Container></Container>
+  <div>popup</div>
 </template>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-}
-</style>
+<script setup>
+import { reactive } from 'vue'
+</script>
+
+<style lang="scss" rel="stylesheet/scss" type="text/scss" scoped></style>

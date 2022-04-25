@@ -7,14 +7,16 @@
     "48": "src/icons/128x128.png",
     "128": "src/icons/128x128.png"
   },
-  "action": { 
+  "action": {
     "default_title": "Click",
-    "default_popup": "src/popup/index.html" 
+    "default_popup": "src/popup/index.html"
   },
-  "content_scripts": [{
-    "js": ["src/content-scripts/index.js"],
-    "matches": ["https://www.google.com/*"]
-  }],
+  "content_scripts": [
+    {
+      "js": ["src/content-scripts/index.js"],
+      "matches": ["https://www.google.com/*"]
+    }
+  ],
   "background": {
     "service_worker": "src/background/index.js"
   },
