@@ -1,29 +1,39 @@
-import path from 'path'
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import path from "path";
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
 
-import { crx } from 'rollup-plugin-chrome-extension'
-import zip from "rollup-plugin-zip"
+import { crx } from "rollup-plugin-chrome-extension";
+import zip from "rollup-plugin-zip";
 
-import manifest from './src/manifest.json'
-import pkg from './package.json'
+import manifest from "./src/manifest.json";
+import pkg from "./package.json";
 
-const isProd = process.env.NODE_ENV === "production"
+const isProd = process.env.NODE_ENV === "production";
 
 const crxOptions = {
-  manifest: Object.assign(manifest, { 
-    name: pkg.displayName || pkg.name, 
+  manifest: Object.assign(manifest, {
+    name: pkg.displayName || pkg.name,
     version: pkg.version,
-    description: pkg.description
-  })
-}
+    description: pkg.description,
+  }),
+};
 
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
-      '@/': `${path.resolve(__dirname, 'src')}/`
-    }
+      "@/": `${path.resolve(__dirname, "src")}/`,
+    },
   },
-  plugins: [vue(), crx(crxOptions), isProd && zip({ dir: "releases" })]
-})
+  plugins: [vue(), crx(crxOptions), isProd && zip({ dir: "releases" })],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // additionalData: [
+        //   `@import "@/style/base/globalVariable.scss";
+        //    @import "@/style/base/globalMixin.scss";`,
+        // ],
+      },
+    },
+  },
+});

@@ -1,0 +1,11 @@
+/**
+ * @description : ⽂本格式化，超出范围显⽰省略号
+ */
+@mixin textOverflow($width: 100%, $display: block) {
+	width: $width;
+	display: $display;
+	white-space: nowrap;
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
