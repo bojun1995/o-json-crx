@@ -22,17 +22,17 @@ const crxOptions = {
 export default defineConfig({
   resolve: {
     alias: {
-      "@/": `${path.resolve(__dirname, "src")}/`,
+      "@": `${path.resolve(__dirname, "src")}/`,
     },
   },
   plugins: [vue(), crx(crxOptions), isProd && zip({ dir: "releases" })],
   css: {
     preprocessorOptions: {
       scss: {
-        // additionalData: [
-        //   `@import "@/style/base/globalVariable.scss";
-        //    @import "@/style/base/globalMixin.scss";`,
-        // ],
+        additionalData: [
+          // `@import "@/style/base/globalVariable.scss";
+          //  @import "@/style/base/globalMixin.scss";`,
+        ],
       },
     },
   },
