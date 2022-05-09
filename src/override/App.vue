@@ -59,6 +59,9 @@ onMounted(() => {
     minimap: {
       enabled: true,
     },
+    // 格式化
+    formatOnPaste: true,
+    formatOnType: true,
   })
 })
 </script>
