@@ -38,8 +38,10 @@ window.MonacoEnvironment = {
 
 onMounted(() => {
   const dom = document.getElementById('layout')
+  const model = monaco.editor.createModel('', 'json')
   monaco.editor.create(dom, {
     language: 'json',
+    model: model,
     theme: 'vs-dark',
     // 可折叠
     folding: true,
