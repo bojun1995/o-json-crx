@@ -8,7 +8,9 @@
   "scripts": {
     "dev": "rimraf dist && vite",
     "build": "vite build",
-    "release": "cbump --tag --commit && vite build"
+    "release": "cbump --tag --commit && vite build",
+    "lint": "eslint --ext .js,.ts,.vue src",
+    "lint-fix": "eslint --fix --ext .js,.ts,.vue src"
   },
   "dependencies": {
     "element-plus": "^2.2.0",
@@ -19,6 +21,11 @@
     "@types/chrome": "^0.0.181",
     "@vitejs/plugin-vue": "^2.3.1",
     "crx-bump": "^0.0.4",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.7.1",
+    "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.70.1",
     "rollup-plugin-chrome-extension": "4.0.1-23",

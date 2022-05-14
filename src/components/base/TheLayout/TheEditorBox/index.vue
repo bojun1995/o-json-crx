@@ -2,8 +2,7 @@
   <div class="the-editor-box">the editor box</div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style lang="scss" rel="stylesheet/scss" type="text/scss" scoped>
 .the-editor-box {

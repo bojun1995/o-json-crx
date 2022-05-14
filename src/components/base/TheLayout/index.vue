@@ -11,7 +11,6 @@
 import TheMenuBar from './TheMenuBar/index.vue'
 import TheTabsBar from './TheTabsBar/index.vue'
 import TheEditorBox from './TheEditorBox/index.vue'
-
 </script>
 
 <style lang="scss" rel="stylesheet/scss" type="text/scss" scoped>
