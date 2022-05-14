@@ -1,5 +1,5 @@
 <template>
-  <div>the menu bar</div>
+  <div>the tabs bar</div>
 </template>
 
 <script setup>
