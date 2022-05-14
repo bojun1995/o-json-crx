@@ -1,6 +1,7 @@
 <template>
   <div class="the-layout">
     <the-menu-bar></the-menu-bar>
+    
   </div>
 </template>
 
