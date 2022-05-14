@@ -9,6 +9,7 @@
     "dev": "rimraf dist && vite",
     "build": "vite build",
     "release": "cbump --tag --commit && vite build",
+    "prepare": "husky install",
     "lint": "eslint --ext .js,.ts,.vue src",
     "lint-fix": "eslint --fix --ext .js,.ts,.vue src"
   },
@@ -25,6 +26,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.7.1",
+    "husky": "^8.0.1",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.70.1",
