@@ -8,5 +8,7 @@ import '@/style/base/globalStyle.scss'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 app.use(ElementPlus)
+// json editor
+import 'jsoneditor/dist/jsoneditor.min.css'
 
 app.mount('#app')

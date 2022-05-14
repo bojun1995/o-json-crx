@@ -1,8 +1,12 @@
 <template>
-  <div class="the-editor-box">the editor box</div>
+  <div class="the-editor-box">
+    <json-editor identity="1"></json-editor>
+  </div>
 </template>
 
-<script setup></script>
+<script setup>
+import JsonEditor from '@/components/base/JsonEditor/index.vue'
+</script>
 
 <style lang="scss" rel="stylesheet/scss" type="text/scss" scoped>
 .the-editor-box {
