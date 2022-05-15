@@ -7,17 +7,25 @@
 // vue
 import { reactive, onMounted, computed } from 'vue'
 // util
-import * as editorInit from './editorInit.js'
+import * as editorUtil from './editorUtil.js'
 
 const props = defineProps({
-  identity: String,
+  identity: {
+    type: String,
+    default: '',
+  },
 })
 const cp_domId = computed(() => {
   return `editor-${props.identity}`
 })
 
+let editorObj = {}
+
 onMounted(() => {
-  editorInit.init(cp_domId.value)
+  editorObj = editorUtil.init(cp_domId.value)
+  setTimeout(() => {
+    editorObj.update({ a: 1 })
+  }, 2000)
 })
 </script>
 

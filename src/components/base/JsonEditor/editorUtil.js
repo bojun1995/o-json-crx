@@ -9,4 +9,5 @@ export function init(domId) {
     onValidationError: function (errors) {},
   }
   const editor = new JSONEditor(container, options)
+  return editor
 }

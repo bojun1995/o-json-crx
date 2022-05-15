@@ -1,7 +1,7 @@
 <template>
   <div class="the-layout">
     <the-menu-bar></the-menu-bar>
-    <the-tabs-bar></the-tabs-bar>
+    <!-- <the-tabs-bar></the-tabs-bar> -->
     <the-editor-box></the-editor-box>
   </div>
 </template>
