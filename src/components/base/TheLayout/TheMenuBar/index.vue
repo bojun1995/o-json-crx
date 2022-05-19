@@ -1,11 +1,7 @@
 <template>
   <div class="the-menu-bar">
-    <div>
-      <el-button type="primary">add json</el-button>
-    </div>
-    <div>
-      <el-button type="primary">setting</el-button>
-    </div>
+    <div></div>
+    <div>setting</div>
   </div>
 </template>
 

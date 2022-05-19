@@ -1,6 +1,5 @@
 <template>
   <div :id="cp_domId" class="editor-box"></div>
-  <!-- <div id="editor-1" class="editor-box"></div> -->
 </template>
 
 <script setup>
