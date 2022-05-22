@@ -14,7 +14,7 @@ module.exports = {
   plugins: ['prettier'],
   rules: {
     'prettier/prettier': 'error',
-    'no-console': 'error',
+    // 'no-console': 'error',
     'no-debugger': 'error',
     'vue/multi-word-component-names': 0,
   },

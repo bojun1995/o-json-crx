@@ -9,13 +9,22 @@
 // sys
 import { onMounted } from 'vue'
 //util
-import editorUtil from '@/utils/editorUtil'
+import editorUtil from '@/utils/editor'
+import consoleUtil from '@/utils/console'
+const consoleCtrl = consoleUtil()
 
 const inputOpts = {
   name: 'input',
   mode: 'code',
   modes: ['code', 'form', 'text', 'tree', 'view', 'preview'],
-  onChangeText: (text) => {},
+  onChangeText: (text) => {
+    try {
+      const testJsonObj = JSON.parse(text)
+      consoleCtrl.log(testJsonObj)
+    } catch (err) {
+      consoleCtrl.err('parse json error')
+    }
+  },
 }
 const outputOpts = {
   name: 'output',
