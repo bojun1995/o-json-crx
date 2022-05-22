@@ -20,9 +20,10 @@ const inputOpts = {
   onChangeText: (text) => {
     try {
       const testJsonObj = JSON.parse(text)
-      consoleCtrl.log(testJsonObj)
+      editorCtrl.updateJson('output', testJsonObj)
+      consoleCtrl.log(JSON.stringify(testJsonObj))
     } catch (err) {
-      consoleCtrl.err('parse json error')
+      consoleCtrl.err(`parse json error: ${text}`)
     }
   },
 }
@@ -30,7 +31,6 @@ const outputOpts = {
   name: 'output',
   mode: 'tree',
   modes: ['code', 'form', 'text', 'tree', 'view', 'preview'],
-  onValidationError: (errors) => {},
 }
 
 const editorCtrl = editorUtil()

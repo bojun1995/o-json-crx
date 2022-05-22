@@ -8,9 +8,12 @@ export default () => {
     const container = document.getElementById(domId)
     editorMap[domId] = new JSONEditor(container, options, jsonObj)
   }
-  const updateJson = (domId, json) => {}
+  const updateJson = (domId, jsonObj) => {
+    editorMap[domId].update(jsonObj)
+  }
   return {
     editorMap,
     init,
+    updateJson,
   }
 }

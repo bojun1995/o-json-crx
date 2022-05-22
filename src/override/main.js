@@ -6,5 +6,7 @@ const app = createApp(App)
 import '@/style/base/globalStyle.scss'
 // json editor
 import 'jsoneditor/dist/jsoneditor.min.css'
+// icon
+import 'remixicon/fonts/remixicon.css'
 
 app.mount('#app')

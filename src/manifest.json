@@ -7,22 +7,11 @@
     "48": "src/icons/128x128.png",
     "128": "src/icons/128x128.png"
   },
-  "action": {
-    "default_title": "o-tools",
-    "default_popup": "src/popup/index.html"
-  },
   "chrome_url_overrides": {
     "newtab": "src/override/index.html"
   },
-  "content_scripts": [
-    {
-      "js": ["src/content-scripts/index.js"],
-      "matches": ["https://www.google.com/*"]
-    }
-  ],
-  "background": {
-    "service_worker": "src/background/index.js"
-  },
-  "options_page": "src/options/index.html",
-  "update_url": "https://clients2.google.com/service/update2/crx"
+  "action": {
+    "default_title": "o-tools",
+    "default_popup": "src/popup/index.html"
+  }
 }

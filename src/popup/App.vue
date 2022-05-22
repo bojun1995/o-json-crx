@@ -1,5 +1,5 @@
 <template>
-  <div>popup</div>
+  <div>o-tools</div>
 </template>
 
 <script setup>

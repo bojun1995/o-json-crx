@@ -9,7 +9,6 @@ export default () => {
     border-top-left-radius: ${borderRadius};
     border-bottom-left-radius: ${borderRadius};
   `
-
   const logHeadStyle = `
     padding: ${padding};
     background: #4893F6;
