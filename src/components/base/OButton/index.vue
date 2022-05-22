@@ -45,7 +45,6 @@ export default {
 
   border: 1px solid rgb(208, 208, 208);
   border-radius: 3px;
-
   &:hover {
     cursor: pointer;
   }
