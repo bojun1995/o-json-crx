@@ -1,12 +1,34 @@
 <template>
   <div class="the-editor-box">
-    <json-editor identity="input" class="editor-input"></json-editor>
-    <json-editor identity="output" class="editor-output"></json-editor>
+    <div id="input" class="editor-input"></div>
+    <div id="output" class="editor-output"></div>
   </div>
 </template>
 
 <script setup>
-import JsonEditor from '@/components/base/JsonEditor/index.vue'
+// sys
+import { onMounted } from 'vue'
+//util
+import editorUtil from '@/utils/editorUtil'
+
+const inputOpts = {
+  name: 'input',
+  mode: 'code',
+  modes: ['code', 'form', 'text', 'tree', 'view', 'preview'],
+  onChangeText: (text) => {},
+}
+const outputOpts = {
+  name: 'output',
+  mode: 'tree',
+  modes: ['code', 'form', 'text', 'tree', 'view', 'preview'],
+  onValidationError: (errors) => {},
+}
+
+const editorCtrl = editorUtil()
+onMounted(() => {
+  editorCtrl.init('input', inputOpts)
+  editorCtrl.init('output', outputOpts)
+})
 </script>
 <script>
 export default {
