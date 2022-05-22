@@ -4,7 +4,6 @@
     <div id="output" class="editor-output"></div>
   </div>
 </template>
-
 <script setup>
 // sys
 import { onMounted } from 'vue'

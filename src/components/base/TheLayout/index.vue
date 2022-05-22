@@ -4,13 +4,16 @@
     <the-editor-box></the-editor-box>
   </div>
 </template>
-
 <script setup>
 // comp
 import TheMenuBar from './TheMenuBar/index.vue'
 import TheEditorBox from './TheEditorBox/index.vue'
 </script>
-
+<script>
+export default {
+  name: 'TheLayout',
+}
+</script>
 <style lang="scss" rel="stylesheet/scss" type="text/scss" scoped>
 .the-layout {
   height: 100%;

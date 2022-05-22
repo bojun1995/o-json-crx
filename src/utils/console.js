@@ -4,14 +4,14 @@ export default () => {
   const baseText = 'o-tools'
   const baseHeadStyle = `
     padding: ${padding};
-    background: #C289FF;
+    background: #8e03ff;
     color: #FFFFFF;
     border-top-left-radius: ${borderRadius};
     border-bottom-left-radius: ${borderRadius};
   `
   const logHeadStyle = `
     padding: ${padding};
-    background: #4893F6;
+    background: #3883fa;
     color: #FFFFFF;
     border-top-right-radius: ${borderRadius};
     border-bottom-right-radius: ${borderRadius};
@@ -21,13 +21,13 @@ export default () => {
   `
   const errHeadStyle = `
     padding: ${padding};
-    background: #F9D0D0;
+    background: #cd3937;
     color: #FFFFFF;
     border-top-right-radius: ${borderRadius};
     border-bottom-right-radius: ${borderRadius};
   `
   const errStyle = `
-    color: #F9D0D0;
+    color: #cd3937;
   `
   const log = (text) => {
     console.log(`%c${baseText}%clog%c ${text}`, baseHeadStyle, logHeadStyle, logStyle)
