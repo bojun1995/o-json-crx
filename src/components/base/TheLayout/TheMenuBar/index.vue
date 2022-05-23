@@ -6,19 +6,36 @@
         <span>o-tools</span>
       </div>
     </div>
-    <div class="the-name-input">
-      <input type="text" placeholder="输入标签名" />
+    <div class="the-name-input__box">
+      <div class="the-name-input">
+        <el-input v-model="nameInput.nameVal" placeholder="输入标签页名" size="normal" clearable></el-input>
+      </div>
     </div>
     <div class="the-setting-btn">
-      <o-button type="primary" class="ri-settings-4-fill"></o-button>
+      <el-button-group>
+        <el-button type="primary">
+          <el-icon :size="25">
+            <i class="ri-github-fill"></i>
+          </el-icon>
+        </el-button>
+        <el-button type="primary">
+          <el-icon class="is-loading" :size="25">
+            <i class="ri-settings-4-fill"></i>
+          </el-icon>
+        </el-button>
+      </el-button-group>
     </div>
   </div>
 </template>
 <script setup>
-// comp
-import OButton from '@/components/base/OButton/index.vue'
+// sys
+import { ref } from 'vue'
 // file
 import LogoPic from '@/assets/icons/logo_with_white_bg.png'
+
+const nameInput = ref({
+  nameVal: '',
+})
 </script>
 <script>
 export default {
@@ -32,6 +49,7 @@ export default {
   height: 40px;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .the-logo {
@@ -48,10 +66,14 @@ export default {
   user-select: none;
 }
 
-.the-name-input {
+.the-name-input__box {
   margin-left: 20px;
   display: flex;
   flex-grow: 1;
+}
+
+.the-name-input {
+  width: 400px;
 }
 
 .the-setting-btn {
