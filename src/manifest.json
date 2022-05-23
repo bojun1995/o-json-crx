@@ -3,9 +3,9 @@
   "name": "Vite Vue Crx",
   "version": "0.0.1",
   "icons": {
-    "16": "src/icons/128x128.png",
-    "48": "src/icons/128x128.png",
-    "128": "src/icons/128x128.png"
+    "16": "src/assets/icons/128x128.png",
+    "48": "src/assets/icons/128x128.png",
+    "128": "src/assets/icons/128x128.png"
   },
   "chrome_url_overrides": {
     "newtab": "src/override/index.html"
