@@ -8,10 +8,23 @@
     </div>
     <div class="the-name-input__box">
       <div class="the-name-input">
-        <el-input v-model="nameInput.nameVal" placeholder="输入标签页名" size="normal" clearable></el-input>
+        <el-input
+          v-model="nameInput.nameVal"
+          placeholder="输入标签页名"
+          size="normal"
+          clearable
+          @change="nameInput.onValChg"
+        >
+          <template #prefix>
+            <el-icon :size="18">
+              <i class="ri-edit-box-line"></i>
+            </el-icon>
+          </template>
+        </el-input>
       </div>
     </div>
-    <div class="the-setting-btn">
+    <div class="the-btn-group">
+      <el-switch v-model="themeSwitch.isSunTheme" />
       <el-button-group>
         <el-button type="primary">
           <el-icon :size="25">
@@ -33,8 +46,15 @@ import { ref } from 'vue'
 // file
 import LogoPic from '@/assets/icons/logo_with_white_bg.png'
 
+const themeSwitch = ref({
+  isSunTheme: false,
+})
+
 const nameInput = ref({
   nameVal: '',
+  onValChg: (val) => {
+    document.title = val
+  },
 })
 </script>
 <script>
@@ -55,7 +75,8 @@ export default {
 .the-logo {
   display: flex;
   flex-direction: row;
-  color: #585858;
+  // color: #585858;
+  color: $fontColor;
 }
 
 .the-logo__text {
@@ -76,9 +97,9 @@ export default {
   width: 400px;
 }
 
-.the-setting-btn {
+.the-btn-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
 }
 </style>

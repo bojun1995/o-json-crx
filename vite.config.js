@@ -25,16 +25,12 @@ export default defineConfig({
       '@': `${path.resolve(__dirname, 'src')}/`,
     },
   },
-  plugins: [vue(), crx(crxOptions), isProd && zip({ dir: 'releases' })],
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: [
-          // '@import "@/style/base/globalVariable.scss";'
-          // `@import "@/style/base/globalVariable.scss";
-          //  @import "@/style/base/globalMixin.scss";`,
-        ],
+        additionalData: `@import "@/style/base/globalVariable.scss"; @import "@/style/base/globalMixin.scss";`,
       },
     },
   },
+  plugins: [vue(), crx(crxOptions), isProd && zip({ dir: 'releases' })],
 })
