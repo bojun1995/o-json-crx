@@ -1,0 +1,36 @@
+@import './theme-pack/matrix.scss';
+@import './theme-pack/sunlight.scss';
+
+$theme-list: (
+	matrix: $matrix,
+	sunlight: $sunlight,
+);
+
+@mixin theme-control() {
+	@each $theme-name, $theme-obj in $theme-list {
+		$theme-obj: $theme-obj !global;
+		[data-themeName='#{$theme-name}'] & {
+			@content;
+		}
+	}
+}
+
+@function get-theme-val($theme-key) {
+	@return map-get($theme-obj, $key: $theme-key);
+}
+
+// 字体色
+@mixin font-color($val-key) {
+	@include theme-control {
+		color: get-theme-val($val-key);
+    transition: all 0.5s ease;
+	}
+}
+
+// 背景色
+@mixin background-color($val-key) {
+	@include theme-control {
+		background-color: get-theme-val($val-key);
+    transition: all 0.5s ease;
+	}
+}

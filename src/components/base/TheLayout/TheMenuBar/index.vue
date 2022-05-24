@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="the-btn-group">
-      <el-switch v-model="themeSwitch.isSunTheme" />
+      <el-switch v-model="themeSwitch.isSunTheme" @change="themeSwitch.onThemeChg" />
       <el-button-group>
         <el-button type="primary">
           <el-icon :size="25">
@@ -48,6 +48,10 @@ import LogoPic from '@/assets/icons/logo_with_white_bg.png'
 
 const themeSwitch = ref({
   isSunTheme: false,
+  onThemeChg: (val) => {
+    const themeName = val ? 'sunlight' : 'matrix'
+    window.document.documentElement.setAttribute('data-themeName', themeName)
+  },
 })
 
 const nameInput = ref({
@@ -76,7 +80,8 @@ export default {
   display: flex;
   flex-direction: row;
   // color: #585858;
-  color: $fontColor;
+  // color: $fontColor;
+  @include font-color('theme-color--0');
 }
 
 .the-logo__text {
