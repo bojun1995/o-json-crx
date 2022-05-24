@@ -16,6 +16,7 @@
   "dependencies": {
     "element-plus": "^2.2.2",
     "jsoneditor": "^9.7.4",
+    "pinia": "^2.0.14",
     "remixicon": "^2.5.0",
     "vue": "^3.2.25"
   },
