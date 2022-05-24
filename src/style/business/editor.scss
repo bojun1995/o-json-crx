@@ -1,0 +1,19 @@
+.custom-editor {
+  :deep(.jsoneditor-poweredBy) {
+    display: none;
+  }
+
+  :deep(.jsoneditor) {
+    @include theme-control {
+      border: 1px solid get-theme-val('layoutBgColor');
+    }
+
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.5s ease;
+  }
+
+  :deep(.jsoneditor-menu) {
+    @include background-color('headBgColor');
+  }
+}

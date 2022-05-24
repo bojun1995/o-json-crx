@@ -42,7 +42,7 @@
 <script setup>
 // sys
 import { ref } from 'vue'
-import { useAppStore } from '@/store/index'
+import { useAppStore } from '@/store/app'
 // file
 import LogoPic from '@/assets/icons/logo_with_white_bg.png'
 
@@ -75,14 +75,13 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
+  @include background-color('headBgColor');
 }
 
 .the-logo {
   display: flex;
   flex-direction: row;
-  // color: #585858;
-  // color: $fontColor;
-  @include font-color('theme-color--0');
+  @include font-color('logoColor');
 }
 
 .the-logo__text {

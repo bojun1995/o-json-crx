@@ -20,5 +20,6 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
+  @include background-color('layoutBgColor');
 }
 </style>

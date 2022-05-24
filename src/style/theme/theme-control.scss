@@ -23,7 +23,7 @@ $theme-list: (
 @mixin font-color($val-key) {
 	@include theme-control {
 		color: get-theme-val($val-key);
-    transition: all 0.5s ease;
+    // transition: color 0.5s ease;
 	}
 }
 
@@ -31,6 +31,6 @@ $theme-list: (
 @mixin background-color($val-key) {
 	@include theme-control {
 		background-color: get-theme-val($val-key);
-    transition: all 0.5s ease;
+    transition: background-color 0.5s ease;
 	}
 }
