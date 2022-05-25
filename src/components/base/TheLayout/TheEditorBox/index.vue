@@ -5,12 +5,14 @@
   </div>
 </template>
 <script setup>
+// https://github.com/josdejong/jsoneditor/blob/master/docs/api.md
 // sys
-import { onMounted } from 'vue'
+import { onMounted, onUpdated } from 'vue'
 //util
 import editorUtil from '@/utils/editor'
 import consoleUtil from '@/utils/console'
 const consoleCtrl = consoleUtil()
+const editorCtrl = editorUtil()
 
 const inputOpts = {
   name: 'input',
@@ -27,6 +29,7 @@ const inputOpts = {
       consoleCtrl.err('parse fail')
     }
   },
+  onModeChange: (newMode, oldMode) => editorCtrl.onModeChg(newMode, oldMode),
 }
 const outputOpts = {
   name: 'output',
@@ -34,10 +37,10 @@ const outputOpts = {
   modes: ['code', 'form', 'text', 'tree', 'view', 'preview'],
 }
 
-const editorCtrl = editorUtil()
 onMounted(() => {
   editorCtrl.init('input', inputOpts)
   editorCtrl.init('output', outputOpts)
+  editorCtrl.replaceEditorIcon()
 })
 </script>
 <script>

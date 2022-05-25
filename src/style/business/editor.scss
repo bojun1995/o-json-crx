@@ -15,14 +15,13 @@
 
   :deep(.jsoneditor-menu) {
     @include background-color('editorHeadBgColor');
-
     @include theme-control {
       border-bottom: 1px solid get-theme-val('logoColor');
       transition: border-color $transitionParam;
     }
-
     & button {
-      background-image: unset
+      background-image: unset;
+      @include font-color('fontColor');
     }
   }
 }
