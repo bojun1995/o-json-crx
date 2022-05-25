@@ -20,7 +20,8 @@ const inputOpts = {
     try {
       const testJsonObj = JSON.parse(text)
       editorCtrl.updateJson('output', testJsonObj)
-      consoleCtrl.log(JSON.stringify(testJsonObj))
+      // consoleCtrl.log(JSON.stringify(testJsonObj))
+      consoleCtrl.log('succ')
     } catch (err) {
       consoleCtrl.err(`parse json error: ${text}`)
     }

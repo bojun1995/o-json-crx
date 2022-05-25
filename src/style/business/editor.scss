@@ -6,14 +6,23 @@
   :deep(.jsoneditor) {
     @include theme-control {
       border: 1px solid get-theme-val('layoutBgColor');
+      transition: border-color $transitionParam;
     }
 
     border-radius: 8px;
     overflow: hidden;
-    transition: border-color 0.5s ease;
   }
 
   :deep(.jsoneditor-menu) {
-    @include background-color('headBgColor');
+    @include background-color('editorHeadBgColor');
+
+    @include theme-control {
+      border-bottom: 1px solid get-theme-val('logoColor');
+      transition: border-color $transitionParam;
+    }
+
+    & button {
+      background-image: unset
+    }
   }
 }
