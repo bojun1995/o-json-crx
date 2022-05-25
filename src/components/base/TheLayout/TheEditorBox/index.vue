@@ -23,7 +23,8 @@ const inputOpts = {
       // consoleCtrl.log(JSON.stringify(testJsonObj))
       consoleCtrl.log('succ')
     } catch (err) {
-      consoleCtrl.err(`parse json error: ${text}`)
+      // consoleCtrl.err(`parse json error: ${text}`)
+      consoleCtrl.err('parse fail')
     }
   },
 }
