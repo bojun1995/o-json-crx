@@ -5,9 +5,14 @@
   </div>
 </template>
 <script setup>
+// sys
+import { useAppStore } from '@/store/app'
 // comp
 import TheMenuBar from './TheMenuBar/index.vue'
 import TheEditorBox from './TheEditorBox/index.vue'
+
+const appStore = useAppStore()
+appStore.doChgThemeName('sunlight')
 </script>
 <script>
 export default {

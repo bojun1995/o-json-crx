@@ -24,18 +24,11 @@
     </div>
     <div class="the-btn-group">
       <el-switch v-model="themeSwitch.isSunTheme" style="margin-right: 20px" @change="themeSwitch.onThemeChg" />
-      <el-button-group>
-        <el-button type="primary">
-          <el-icon :size="25">
-            <i class="ri-github-fill"></i>
-          </el-icon>
-        </el-button>
-        <el-button type="primary">
-          <el-icon class="is-loading" :size="25">
-            <i class="ri-settings-4-fill"></i>
-          </el-icon>
-        </el-button>
-      </el-button-group>
+      <el-button type="primary">
+        <el-icon class="is-loading" :size="25">
+          <i class="ri-settings-4-fill"></i>
+        </el-icon>
+      </el-button>
     </div>
   </div>
 </template>
@@ -50,7 +43,7 @@ const appStore = useAppStore()
 const themeSwitch = ref({
   isSunTheme: false,
   onThemeChg: (val) => {
-    const themeName = val ? 'sunlight' : 'matrix'
+    const themeName = false === val ? 'sunlight' : 'matrix'
     appStore.doChgThemeName(themeName)
   },
 })
