@@ -59,4 +59,8 @@
   :deep(.jsoneditor-navigation-bar) {
     @include background-color('layoutBgColor')
   }
+
+  :deep(.jsoneditor-selected) {
+    @include background-color('logoColor')
+  }
 }
