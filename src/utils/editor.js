@@ -25,12 +25,15 @@ export default () => {
       { from: 'jsoneditor-redo', to: 'ri-arrow-go-forward-line' },
       { from: 'jsoneditor-expand-all', to: 'ri-align-top' },
       { from: 'jsoneditor-collapse-all', to: 'ri-align-bottom' },
+      { from: 'jsoneditor-refresh', to: 'ri-search-line' },
+      { from: 'jsoneditor-next', to: 'ri-arrow-down-s-line' },
+      { from: 'jsoneditor-previous', to: 'ri-arrow-up-s-line' },
     ]
     targetClassList.forEach((item) => {
       const targetList = document.getElementsByClassName(item.from)
       if (targetList && targetList.length > 0) {
-        for (let index = 0; index < targetList.length; index++) {
-          const target = targetList[index]
+        for (let index = targetList.length - 1; index > -1; index--) {
+          let target = targetList[index]
           target.className = item.to
         }
       }

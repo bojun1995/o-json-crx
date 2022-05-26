@@ -34,3 +34,9 @@ $theme-list: (
     transition: background-color $g_transitionParam;
 	}
 }
+// 背景色 without trans
+@mixin background-color-no-trans($val-key) {
+	@include theme-control {
+		background-color: get-theme-val($val-key);
+	}
+}

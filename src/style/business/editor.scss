@@ -11,6 +11,10 @@
 
     border-radius: 8px;
     overflow: hidden;
+
+    div span {
+      font-family: $g_fontFamily;
+    }
   }
 
   :deep(.jsoneditor-menu) {
@@ -34,5 +38,25 @@
 
   :deep(.jsoneditor-preview) {
     @include background-color('headBgColor')
+  }
+
+  :deep(.jsoneditor-frame) {
+    @include background-color-no-trans('layoutBgColor');
+    border-radius: 4px;
+    overflow: hidden;
+
+    & input {
+      line-height: 20px;
+      @include font-color('fontColor');
+      @include background-color-no-trans('layoutBgColor');
+    }
+  }
+
+  :deep(.jsoneditor-results) {
+    @include font-color('fontColor');
+  }
+
+  :deep(.jsoneditor-navigation-bar) {
+    @include background-color('layoutBgColor')
   }
 }
