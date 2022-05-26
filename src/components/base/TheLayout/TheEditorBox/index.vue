@@ -35,6 +35,7 @@ const outputOpts = {
   name: 'output',
   mode: 'tree',
   modes: ['code', 'form', 'text', 'tree', 'view', 'preview'],
+  onModeChange: (newMode, oldMode) => editorCtrl.onModeChg(newMode, oldMode),
 }
 
 onMounted(() => {

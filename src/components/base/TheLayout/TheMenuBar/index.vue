@@ -78,7 +78,7 @@ export default {
 }
 
 .the-logo__text {
-  font-family: 'JetBrainsMono-Bold';
+  font-family: $g_fontFamilyBold;
   line-height: 40px;
   font-size: 24px;
   padding-left: 10px;

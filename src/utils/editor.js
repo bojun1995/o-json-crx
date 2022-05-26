@@ -16,14 +16,15 @@ export default () => {
   }
   const replaceEditorIcon = () => {
     const targetClassList = [
-      { from: 'jsoneditor-format', to: 'ri-file-list-2-line' },
-      { from: 'jsoneditor-compact', to: 'ri-folder-zip-line' },
-      { from: 'jsoneditor-sort', to: 'ri-code-line' },
-      { from: 'jsoneditor-transform', to: 'ri-code-line' },
-      { from: 'jsoneditor-repair', to: 'ri-code-line' },
-      { from: 'jsoneditor-undo', to: 'ri-code-line' },
-      { from: 'jsoneditor-redo', to: 'ri-code-line' },
-      // { from: 'jsoneditor-modes', to: 'ri-code-line' },
+      { from: 'jsoneditor-format', to: 'ri-magic-line' },
+      { from: 'jsoneditor-compact', to: 'ri-align-vertically' },
+      { from: 'jsoneditor-sort', to: 'ri-sort-desc' },
+      { from: 'jsoneditor-transform', to: 'ri-find-replace-line' },
+      { from: 'jsoneditor-repair', to: 'ri-bug-line' },
+      { from: 'jsoneditor-undo', to: 'ri-arrow-go-back-line' },
+      { from: 'jsoneditor-redo', to: 'ri-arrow-go-forward-line' },
+      { from: 'jsoneditor-expand-all', to: 'ri-align-top' },
+      { from: 'jsoneditor-collapse-all', to: 'ri-align-bottom' },
     ]
     targetClassList.forEach((item) => {
       const targetList = document.getElementsByClassName(item.from)

@@ -31,6 +31,6 @@ $theme-list: (
 @mixin background-color($val-key) {
 	@include theme-control {
 		background-color: get-theme-val($val-key);
-    transition: background-color $transitionParam;
+    transition: background-color $g_transitionParam;
 	}
 }
