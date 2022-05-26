@@ -11,7 +11,7 @@
     "newtab": "src/override/index.html"
   },
   "action": {
-    "default_title": "o-tools",
+    "default_title": "o-json",
     "default_popup": "src/popup/index.html"
   }
 }

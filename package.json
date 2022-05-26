@@ -1,6 +1,6 @@
 {
-  "name": "o-tools-crx",
-  "displayName": "o-tools-crx",
+  "name": "o-json-crx",
+  "displayName": "o-json-crx",
   "description": "Chrome extension",
   "private": true,
   "version": "0.0.1",

@@ -3,7 +3,7 @@
     <div class="the-logo">
       <img :src="LogoPic" height="40" width="40" />
       <div class="the-logo__text">
-        <span>o-tools</span>
+        <span>o-json</span>
       </div>
     </div>
     <div class="the-grow"></div>

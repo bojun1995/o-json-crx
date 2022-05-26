@@ -1,7 +1,7 @@
 export default () => {
   const padding = `3px 5px`
   const borderRadius = `4px`
-  const baseText = 'o-tools'
+  const baseText = 'o-json'
   const baseHeadStyle = `
     padding: ${padding};
     background: #8e03ff;

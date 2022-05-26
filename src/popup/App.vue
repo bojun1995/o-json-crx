@@ -1,5 +1,5 @@
 <template>
-  <div>o-tools</div>
+  <div>o-json</div>
 </template>
 
 <script setup>
