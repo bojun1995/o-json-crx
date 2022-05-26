@@ -38,9 +38,22 @@ const outputOpts = {
   onModeChange: (newMode, oldMode) => editorCtrl.onModeChg(newMode, oldMode),
 }
 
+const testJson = {
+  array: [1, 2, 3],
+  boolean: true,
+  string: '啊实打实大所大gold',
+  color: 'blue',
+  null: null,
+  number: 123,
+  object: {
+    a: 'b',
+    c: 'd',
+  },
+}
+
 onMounted(() => {
-  editorCtrl.init('input', inputOpts)
-  editorCtrl.init('output', outputOpts)
+  editorCtrl.init('input', inputOpts, testJson)
+  editorCtrl.init('output', outputOpts, testJson)
   editorCtrl.replaceEditorIcon()
 })
 </script>

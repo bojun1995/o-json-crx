@@ -12,8 +12,8 @@
     border-radius: 8px;
     overflow: hidden;
 
-    div span {
-      font-family: $g_fontFamily;
+    div {
+      font-family: $g_fontFamily  !important;
     }
   }
 
@@ -36,19 +36,16 @@
 
   }
 
-  :deep(.jsoneditor-preview) {
-    @include background-color('headBgColor')
-  }
 
   :deep(.jsoneditor-frame) {
-    @include background-color-no-trans('layoutBgColor');
+    @include background-color__no-trans('layoutBgColor');
     border-radius: 4px;
     overflow: hidden;
 
     & input {
       line-height: 20px;
       @include font-color('fontColor');
-      @include background-color-no-trans('layoutBgColor');
+      @include background-color__no-trans('layoutBgColor');
     }
   }
 
@@ -62,5 +59,76 @@
 
   :deep(.jsoneditor-selected) {
     @include background-color('logoColor')
+  }
+
+  :deep(.jsoneditor-navigation-bar) {
+    border-bottom: unset;
+  }
+
+  // 背景色
+  :deep(.jsoneditor-tree) {
+    @include background-color('headBgColor');
+
+    div {
+      @include font-color__imp('fontColor');
+    }
+  }
+
+  :deep(.jsoneditor-highlight) {
+    @include background-color('editorSelectedColor');
+  }
+
+  :deep(.jsoneditor-separator) {
+    @include background-color('headBgColor');
+  }
+
+  :deep(.jsoneditor-field) {
+    &:hover {
+      @include theme-control {
+        background-color: get-theme-val('logoColor');
+        border-color: get-theme-val('logoColor');
+      }
+    }
+  }
+
+  :deep(.jsoneditor-value) {
+    &:hover {
+      @include theme-control {
+        background-color: get-theme-val('logoColor');
+        border-color: get-theme-val('logoColor');
+      }
+    }
+  }
+
+  :deep(.jsoneditor-preview) {
+    @include font-color('fontColor');
+    @include background-color('headBgColor')
+  }
+
+  :deep(.jsoneditor-statusbar) {
+    @include font-color('fontColor');
+    @include background-color('headBgColor')
+  }
+
+  :deep(.ace_gutter) {
+    @include font-color('fontColor');
+    @include background-color('headBgColor')
+  }
+
+  :deep(.ace_content) {
+    @include font-color('fontColor');
+    @include background-color('headBgColor')
+  }
+
+  :deep(.ace_gutter-active-line) {
+    @include background-color('editorSelectedColor');
+  }
+
+  :deep(.ace_text-layer) {
+    @include font-color('fontColor');
+  }
+
+  :deep(.ace_variable) {
+    @include font-color('fontColor');
   }
 }
