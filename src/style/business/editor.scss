@@ -83,7 +83,9 @@
   }
 
   :deep(.jsoneditor-field) {
-    &:hover {
+
+    &:hover,
+    &:focus {
       @include theme-control {
         background-color: get-theme-val('logoColor');
         border-color: get-theme-val('logoColor');
@@ -92,7 +94,9 @@
   }
 
   :deep(.jsoneditor-value) {
-    &:hover {
+
+    &:hover,
+    &:focus {
       @include theme-control {
         background-color: get-theme-val('logoColor');
         border-color: get-theme-val('logoColor');
