@@ -131,4 +131,21 @@
   :deep(.ace_variable) {
     @include font-color('fontColor');
   }
+
+  :deep(.ace_string) {
+    @include font-color('logoColor');
+  }
+
+  :deep(.ace_active-line) {
+    @include background-color('editorSelectedColor');
+  }
+
+  :deep(.ace_fold) {
+    @include background-color('editorSelectedColor');
+  }
+
+  :deep(textarea.jsoneditor-text) {
+    @include font-color('fontColor');
+    @include background-color('headBgColor')
+  }
 }

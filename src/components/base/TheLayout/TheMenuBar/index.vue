@@ -24,7 +24,7 @@
     </div>
     <div class="the-btn-group">
       <el-switch v-model="themeSwitch.isSunTheme" style="margin-right: 20px" @change="themeSwitch.onThemeChg" />
-      <el-button type="primary">
+      <el-button type="default" plain>
         <el-icon class="is-loading" :size="25">
           <i class="ri-settings-4-fill"></i>
         </el-icon>
