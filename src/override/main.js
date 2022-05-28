@@ -15,6 +15,10 @@ import 'remixicon/fonts/remixicon.css'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 app.use(ElementPlus)
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
+}
 // pinia
 import { createPinia } from 'pinia'
 // o-comp

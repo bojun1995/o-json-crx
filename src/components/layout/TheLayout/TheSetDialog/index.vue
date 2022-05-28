@@ -34,7 +34,7 @@
         <el-form-item v-show="'auto' == setForm.useAutoChgTheme" label="切换至日间主题">
           <el-time-select
             v-model="setForm.chgToSunThemeTime"
-            prefix-icon="ri-sun-line"
+            prefix-icon="Sunny"
             start="00:00"
             step="00:15"
             end="23:45"
@@ -45,6 +45,7 @@
         <el-form-item v-show="'auto' == setForm.useAutoChgTheme" label="切换至夜间主题">
           <el-time-select
             v-model="setForm.chgToMoonThemeTime"
+            prefix-icon="Moon"
             start="00:00"
             step="00:15"
             end="23:45"
