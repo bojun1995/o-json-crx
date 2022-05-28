@@ -4,6 +4,8 @@ const app = createApp(App)
 
 // scss
 import '@/style/base/globalStyle.scss'
+import '@/style/business/oComp.scss'
+// fonts
 import '@/assets/fonts/install.css'
 // json editor
 import 'jsoneditor/dist/jsoneditor.min.css'

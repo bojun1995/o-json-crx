@@ -24,11 +24,7 @@
     </div>
     <div class="the-btn-group">
       <el-switch v-model="themeSwitch.isSunTheme" style="margin-right: 20px" @change="themeSwitch.onThemeChg" />
-      <el-button type="default" plain @click="setBtn.onClk">
-        <el-icon class="is-loading" :size="25">
-          <i class="ri-settings-4-fill"></i>
-        </el-icon>
-      </el-button>
+      <o-button icon="ri-settings-4-fill" @click="setBtn.onClk"></o-button>
     </div>
   </div>
 </template>
@@ -71,7 +67,7 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss" type="text/scss" scoped>
 .the-menu-bar {
-  padding: 5px 10px;
+  padding: 5px 15px 5px 10px;
   height: 40px;
   display: flex;
   flex-direction: row;

@@ -1,0 +1,24 @@
+.o-dialog {
+  &.el-dialog {
+    border-radius: $g_radius;
+    @include theme-control {
+      border: 2px solid get-theme-val('dialogBgColor');
+    }
+  }
+
+  .el-dialog__header {
+    @include font-color('fontColor');
+    @include background-color('dialogBgColor');
+    margin-right: unset;
+    padding-bottom: 0px;
+  }
+
+  .el-dialog__title {
+    @include font-color('fontColor');
+  }
+
+  .el-dialog__body {
+    @include font-color('fontColor');
+    @include background-color('dialogBgColor');
+  }
+}

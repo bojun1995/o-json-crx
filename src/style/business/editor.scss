@@ -9,7 +9,7 @@
       transition: border-color $g_transitionParam;
     }
 
-    border-radius: 8px;
+    border-radius: $g_radius;
     overflow: hidden;
 
     div {
@@ -35,7 +35,6 @@
     }
 
   }
-
 
   :deep(.jsoneditor-frame) {
     @include background-color__no-trans('layoutBgColor');
@@ -151,5 +150,9 @@
   :deep(textarea.jsoneditor-text) {
     @include font-color('fontColor');
     @include background-color('headBgColor')
+  }
+
+  :deep(td.jsoneditor-separator) {
+    padding: 6px 0;
   }
 }
