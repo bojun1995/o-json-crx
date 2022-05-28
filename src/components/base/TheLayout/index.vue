@@ -1,18 +1,30 @@
 <template>
   <div class="the-layout">
-    <the-menu-bar></the-menu-bar>
+    <the-menu-bar @on-set-btn-clk="setDialog.onSetBtnClk"></the-menu-bar>
     <the-editor-box></the-editor-box>
+    <the-set-dialog ref="theSetDialogRef"></the-set-dialog>
   </div>
 </template>
 <script setup>
 // sys
+import { ref } from 'vue'
 import { useAppStore } from '@/store/app'
 // comp
 import TheMenuBar from './TheMenuBar/index.vue'
 import TheEditorBox from './TheEditorBox/index.vue'
+import TheSetDialog from './TheSetDialog/index.vue'
 
 const appStore = useAppStore()
 appStore.doChgThemeName('sunlight')
+
+// childRef
+const theSetDialogRef = ref()
+
+const setDialog = ref({
+  onSetBtnClk: () => {
+    theSetDialogRef.value.doShow()
+  },
+})
 </script>
 <script>
 export default {

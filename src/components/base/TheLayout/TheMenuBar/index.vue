@@ -24,7 +24,7 @@
     </div>
     <div class="the-btn-group">
       <el-switch v-model="themeSwitch.isSunTheme" style="margin-right: 20px" @change="themeSwitch.onThemeChg" />
-      <el-button type="default" plain>
+      <el-button type="default" plain @click="setBtn.onClk">
         <el-icon class="is-loading" :size="25">
           <i class="ri-settings-4-fill"></i>
         </el-icon>
@@ -34,10 +34,12 @@
 </template>
 <script setup>
 // sys
-import { ref } from 'vue'
+import { ref, defineEmits } from 'vue'
 import { useAppStore } from '@/store/app'
 // file
 import LogoPic from '@/assets/icons/logo_with_white_bg.png'
+
+const emit = defineEmits(['on-set-btn-clk'])
 
 const appStore = useAppStore()
 const themeSwitch = ref({
@@ -52,6 +54,12 @@ const nameInput = ref({
   nameVal: '',
   onValChg: (val) => {
     document.title = val
+  },
+})
+
+const setBtn = ref({
+  onClk: () => {
+    emit('on-set-btn-clk')
   },
 })
 </script>
