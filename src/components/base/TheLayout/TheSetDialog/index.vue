@@ -14,7 +14,7 @@
 // sys
 import { ref, defineExpose } from 'vue'
 // comp
-import OButton from '@/components/base/OButton/index.vue'
+// import OButton from '@/components/base/OButton/index.vue'
 
 const setDialog = ref({
   visible: false,

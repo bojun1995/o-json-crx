@@ -15,6 +15,10 @@ import 'element-plus/dist/index.css'
 app.use(ElementPlus)
 // pinia
 import { createPinia } from 'pinia'
+// o-comp
+import OCompInstall from '@/install/base/oComp.js'
+OCompInstall(app)
+
 app.use(createPinia())
 
 app.mount('#app')
