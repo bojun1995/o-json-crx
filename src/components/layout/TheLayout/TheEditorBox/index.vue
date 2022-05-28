@@ -7,7 +7,7 @@
 <script setup>
 // https://github.com/josdejong/jsoneditor/blob/master/docs/api.md
 // sys
-import { onMounted, onUpdated } from 'vue'
+import { onMounted } from 'vue'
 //util
 import editorUtil from '@/utils/editor'
 import consoleUtil from '@/utils/console'
@@ -52,6 +52,7 @@ const testJson = {
 }
 
 onMounted(() => {
+  editorCtrl.readClipboard()
   editorCtrl.init('input', inputOpts, testJson)
   editorCtrl.init('output', outputOpts, testJson)
   editorCtrl.replaceEditorIcon()

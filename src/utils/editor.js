@@ -1,12 +1,24 @@
 // plugin
 // doc https://github.com/josdejong/jsoneditor/blob/develop/docs/api.md
 import JSONEditor from 'jsoneditor'
+import consoleUtil from '@/utils/console'
 
 export default () => {
   const editorMap = {}
+  // const consoleUtil = consoleUtil
   const init = (domId, options, jsonObj) => {
     const container = document.getElementById(domId)
     editorMap[domId] = new JSONEditor(container, options, jsonObj)
+  }
+  const readClipboard = () => {
+    navigator.clipboard
+      .readText()
+      .then((val) => {
+        consoleUtil().log(val)
+      })
+      .catch((val) => {
+        consoleUtil().err(val)
+      })
   }
   const updateJson = (domId, jsonObj) => {
     editorMap[domId].update(jsonObj)
@@ -45,5 +57,6 @@ export default () => {
     updateJson,
     onModeChg,
     replaceEditorIcon,
+    readClipboard,
   }
 }

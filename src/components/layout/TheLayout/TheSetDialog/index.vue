@@ -11,7 +11,6 @@
         <span :id="titleId" :class="titleClass">设置</span>
         <o-button icon="ri-close-line" @click="close"></o-button>
       </div>
-      <!-- <el-divider class="set-dialog__divider" /> -->
     </template>
     <div class="set-dialog__content">
       <el-form :model="setForm" label-width="120px" class="o-form">
@@ -51,7 +50,6 @@
             end="23:45"
             placeholder="选择时间点"
             :clearable="false"
-            @change="setForm.onTimeChg"
           />
         </el-form-item>
       </el-form>
@@ -72,9 +70,6 @@ const setForm = ref({
   useAutoChgTheme: 'auto',
   chgToSunThemeTime: '',
   chgToMoonThemeTime: '',
-  onTimeChg: (val) => {
-    console.log(val)
-  },
 })
 
 const doShow = () => {
@@ -94,15 +89,6 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.set-dialog__divider {
-  &.el-divider--horizontal {
-    margin: 20px 0px 0px 0px;
-    @include theme-control {
-      border-top-color: get-theme-val('logoColor');
-    }
-  }
 }
 
 .set-dialog__content {

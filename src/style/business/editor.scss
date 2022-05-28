@@ -22,7 +22,6 @@
 
     @include theme-control {
       border-bottom: 1px solid get-theme-val('logoColor');
-      transition: border-color $g_transitionParam;
     }
 
     & button {

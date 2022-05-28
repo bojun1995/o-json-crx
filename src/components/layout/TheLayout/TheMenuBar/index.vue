@@ -23,7 +23,18 @@
       </el-input>
     </div>
     <div class="the-btn-group">
-      <el-switch v-model="themeSwitch.isSunTheme" style="margin-right: 20px" @change="themeSwitch.onThemeChg" />
+      <el-switch
+        v-model="themeSwitch.isSunTheme"
+        inline-prompt
+        active-value="moon"
+        inactive-value="sun"
+        :active-icon="Moon"
+        :inactive-icon="Sunny"
+        active-color="#41b883"
+        inactive-color="#ff6768"
+        class="the-btn-group__theme-switch"
+        @change="themeSwitch.onThemeChg"
+      />
       <o-button icon="ri-settings-4-fill" @click="setBtn.onClk"></o-button>
     </div>
   </div>
@@ -32,6 +43,8 @@
 // sys
 import { ref, defineEmits } from 'vue'
 import { useAppStore } from '@/store/app'
+// element
+import { Sunny, Moon } from '@element-plus/icons-vue'
 // file
 import LogoPic from '@/assets/icons/logo_with_white_bg.png'
 
@@ -39,9 +52,9 @@ const emit = defineEmits(['on-set-btn-clk'])
 
 const appStore = useAppStore()
 const themeSwitch = ref({
-  isSunTheme: false,
+  isSunTheme: 'sun',
   onThemeChg: (val) => {
-    const themeName = false === val ? 'sunlight' : 'matrix'
+    const themeName = 'sun' === val ? 'sunlight' : 'matrix'
     appStore.doChgThemeName(themeName)
   },
 })
@@ -103,5 +116,9 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.the-btn-group__theme-switch {
+  margin-right: 20px;
 }
 </style>
