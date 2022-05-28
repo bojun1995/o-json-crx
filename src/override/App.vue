@@ -6,7 +6,7 @@
 
 <script setup>
 // comp
-import TheLayout from '@/components/base/TheLayout/index.vue'
+import TheLayout from '@/components/layout/TheLayout/index.vue'
 </script>
 
 <style lang="scss" rel="stylesheet/scss" type="text/scss" scoped>

@@ -22,3 +22,24 @@
     @include background-color('dialogBgColor');
   }
 }
+
+.o-divider {
+  &.el-divider--horizontal {
+    @include theme-control {
+      border-top-color: get-theme-val('logoColor');
+    }
+  }
+  .o-divider__text {
+    @include font-color('fontColor');
+  }
+
+  .el-divider__text {
+    @include background-color('dialogBgColor');
+  }
+}
+
+.o-form {
+  .el-form-item__label {
+    @include font-color('fontColor');
+  }
+}
