@@ -67,6 +67,9 @@ export default {
   flex-direction: row;
   flex-grow: 1;
   padding: 10px;
+  // 50px the-menu-bar height
+  // 20px padding
+  max-height: calc(100% - 50px - 20px);
 }
 .editor-input {
   width: 30%;
@@ -74,5 +77,6 @@ export default {
 }
 .editor-output {
   width: 70%;
+  max-height: 100%;
 }
 </style>
