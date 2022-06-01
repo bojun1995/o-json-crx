@@ -25,10 +25,10 @@ const inputOpts = {
   modes: ['code', 'form', 'text', 'tree', 'view', 'preview'],
   onChangeText: (text) => {
     try {
-      const testJsonObj = JSON.parse(text)
-      editorCtrl.updateJson('output', testJsonObj)
-      // consoleCtrl.log(JSON.stringify(testJsonObj))
-      consoleCtrl.log('succ')
+      const jsonObj = JSON.parse(text)
+      editorCtrl.updateJson('output', jsonObj)
+      // consoleCtrl.log(JSON.stringify(jsonObj))
+      consoleCtrl.log('sync text success')
     } catch (err) {
       // consoleCtrl.err(`parse json error: ${text}`)
       consoleCtrl.err('parse fail')
@@ -43,27 +43,14 @@ const outputOpts = {
   onModeChange: (newMode, oldMode) => editorCtrl.onModeChg(newMode, oldMode),
 }
 
-const testJson = {
-  array: [1, 2, 3],
-  boolean: true,
-  string: '啊实打实大所大gold',
-  color: 'blue',
-  null: null,
-  number: 123,
-  object: {
-    a: 'b',
-    c: 'd',
-  },
-}
-
 onMounted(() => {
+  editorCtrl.init('input', inputOpts)
+  editorCtrl.init('output', outputOpts)
+  editorCtrl.replaceEditorIcon()
   // 是否读取剪切板
   if (true == setConfig.useAutoReadClipboard) {
-    editorCtrl.readClipboard()
+    editorCtrl.readClipboard('input')
   }
-  editorCtrl.init('input', inputOpts, testJson)
-  editorCtrl.init('output', outputOpts, testJson)
-  editorCtrl.replaceEditorIcon()
 })
 </script>
 <script>

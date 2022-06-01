@@ -2,6 +2,8 @@
 // doc https://github.com/josdejong/jsoneditor/blob/develop/docs/api.md
 import JSONEditor from 'jsoneditor'
 import consoleUtil from '@/utils/console'
+// element
+import { ElNotification } from 'element-plus'
 
 export default () => {
   const editorMap = {}
@@ -10,14 +12,24 @@ export default () => {
     const container = document.getElementById(domId)
     editorMap[domId] = new JSONEditor(container, options, jsonObj)
   }
-  const readClipboard = () => {
+  const readClipboard = (domId) => {
     navigator.clipboard
       .readText()
       .then((val) => {
-        consoleUtil().log(val)
+        const jsonObj = JSON.parse(val)
+        if (jsonObj) {
+          editorMap['input'].update(JSON.parse(val))
+          editorMap['output'].update(JSON.parse(val))
+          ElNotification({
+            title: '解析成功',
+            message: '已自动解析剪切板JSON',
+            type: 'success',
+          })
+        }
+        consoleUtil().log(`parse clipboard success`)
       })
-      .catch((val) => {
-        consoleUtil().err(val)
+      .catch((err) => {
+        consoleUtil().err(`parse clipboard fail: ${err}`)
       })
   }
   const updateJson = (domId, jsonObj) => {
