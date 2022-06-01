@@ -5,6 +5,7 @@
     :modal="false"
     :close-on-click-modal="true"
     custom-class="o-dialog"
+    @close="setDialog.onClose"
   >
     <template #header="{ close, titleId, titleClass }">
       <div class="set-dialog__header">
@@ -60,16 +61,24 @@
 <script setup>
 // sys
 import { ref, defineExpose } from 'vue'
+// store
+import { useAppStore } from '@/store/app'
+
+const appStore = useAppStore()
+const appSetConfig = appStore.getSetConfig()
 
 const setDialog = ref({
   visible: false,
+  onClose: () => {
+    appStore.chgSetConfig(setForm.value)
+  },
 })
 
 const setForm = ref({
-  useAutoReadClipboard: true,
-  useAutoChgTheme: 'auto',
-  chgToSunThemeTime: '',
-  chgToMoonThemeTime: '',
+  useAutoReadClipboard: appSetConfig.useAutoReadClipboard,
+  useAutoChgTheme: appSetConfig.useAutoChgTheme,
+  chgToSunThemeTime: appSetConfig.chgToSunThemeTime,
+  chgToMoonThemeTime: appSetConfig.chgToMoonThemeTime,
 })
 
 const doShow = () => {

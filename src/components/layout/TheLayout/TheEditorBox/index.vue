@@ -8,11 +8,16 @@
 // https://github.com/josdejong/jsoneditor/blob/master/docs/api.md
 // sys
 import { onMounted } from 'vue'
+// store
+import { useAppStore } from '@/store/app'
 //util
 import editorUtil from '@/utils/editor'
 import consoleUtil from '@/utils/console'
 const consoleCtrl = consoleUtil()
 const editorCtrl = editorUtil()
+
+const appStore = useAppStore()
+const setConfig = appStore.getSetConfig()
 
 const inputOpts = {
   // name: 'input',
@@ -52,7 +57,10 @@ const testJson = {
 }
 
 onMounted(() => {
-  editorCtrl.readClipboard()
+  // 是否读取剪切板
+  if (true == setConfig.useAutoReadClipboard) {
+    editorCtrl.readClipboard()
+  }
   editorCtrl.init('input', inputOpts, testJson)
   editorCtrl.init('output', outputOpts, testJson)
   editorCtrl.replaceEditorIcon()
