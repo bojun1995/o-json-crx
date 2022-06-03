@@ -39,7 +39,7 @@ export default () => {
       })
     }
   }
-  const chgThemeBySetConfig = () => {
+  const chgThemeBySetConfig = (setThemeNow = true) => {
     if ('auto' == setConfig.useAutoChgTheme) {
       const curDateStr = dayjs().format('YYYY-MM-DD')
       const curMills = new Date().getTime()
@@ -70,15 +70,17 @@ export default () => {
         doChg2Moon(chg2MoonDifMills + oneDayMills)
       }
       // 立刻切换
-      // consoleUtil.log(`chg2SunDifMills = ${chg2SunDifMills}, chg2MoonDifMills = ${chg2MoonDifMills}`)
-      if (chg2SunDifMills > 0 && chg2MoonDifMills > 0) {
-        chgTheme('matrix', false)
-      }
-      if (chg2SunDifMills < 0 && chg2MoonDifMills > 0) {
-        chgTheme('sunlight', false)
-      }
-      if (chg2SunDifMills < 0 && chg2MoonDifMills < 0) {
-        chgTheme('matrix', false)
+      if (setThemeNow) {
+        // consoleUtil.log(`chg2SunDifMills = ${chg2SunDifMills}, chg2MoonDifMills = ${chg2MoonDifMills}`)
+        if (chg2SunDifMills > 0 && chg2MoonDifMills > 0) {
+          chgTheme('matrix', false)
+        }
+        if (chg2SunDifMills < 0 && chg2MoonDifMills > 0) {
+          chgTheme('sunlight', false)
+        }
+        if (chg2SunDifMills < 0 && chg2MoonDifMills < 0) {
+          chgTheme('matrix', false)
+        }
       }
     }
   }

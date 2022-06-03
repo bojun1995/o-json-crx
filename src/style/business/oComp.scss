@@ -128,9 +128,13 @@
     @include font-color('fontColor');
 
     &.selected {
-      @include font-color('logoColor');
+      @include font-color('fontColor');
+      @include background-color('logoColor');
     }
 
+    &.hover {
+      @include background-color('editorSelectedColor');
+    }
     &:hover {
       @include background-color('editorSelectedColor');
     }

@@ -79,7 +79,7 @@ const setDialog = ref({
   visible: false,
   onClosed: () => {
     appStore.chgSetConfig(setForm.value)
-    themeUtil.chgThemeBySetConfig()
+    themeUtil.chgThemeBySetConfig(false)
   },
 })
 
