@@ -78,9 +78,61 @@
 }
 
 .o-select {
-  .is-focus .el-input__wrapper {
+  .el-input__wrapper {
+    @include background-color('layoutBgColor');
+    box-shadow: unset;
+
+    &.is-focus {
+      @include theme-control {
+        box-shadow: 0 0 0 1px get-theme-val('logoColor') inset !important;
+      }
+    }
+
+    &:hover {
+      @include theme-control {
+        box-shadow: 0 0 0 1px get-theme-val('logoColor') inset !important;
+      }
+    }
+
+    .el-input__prefix {
+      @include font-color('fontColor');
+    }
+
+    .el-input__inner {
+      @include font-color('fontColor');
+    }
+  }
+
+}
+
+.o-popper {
+  &.el-popper {
     @include theme-control {
-      box-shadow: 0 0 0 1px get-theme-val('logoColor') inset !important;
+      background-color: get-theme-val('layoutBgColor');
+    }
+
+    border: unset !important;
+    background: unset;
+  }
+
+  .el-popper__arrow {
+    &::before {
+      @include theme-control {
+        background: get-theme-val('layoutBgColor') !important;
+        border: 1px solid get-theme-val('layoutBgColor') !important;
+      }
+    }
+  }
+
+  .el-select-dropdown__item {
+    @include font-color('fontColor');
+
+    &.selected {
+      @include font-color('logoColor');
+    }
+
+    &:hover {
+      @include background-color('editorSelectedColor');
     }
   }
 }
@@ -115,12 +167,15 @@
     @include theme-control {
       background-color: get-theme-val('dialogBgColor');
     }
+
     .el-notification__title {
       @include font-color('fontColor');
     }
+
     .el-notification__content {
       @include font-color('fontColor');
     }
+
     border: unset;
   }
 }

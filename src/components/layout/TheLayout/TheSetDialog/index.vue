@@ -41,6 +41,7 @@
             placeholder="选择时间点"
             :clearable="false"
             class="o-select"
+            popper-class="o-popper"
           />
         </el-form-item>
         <el-form-item v-show="'auto' == setForm.useAutoChgTheme" label="切换至夜间主题">
@@ -53,6 +54,7 @@
             placeholder="选择时间点"
             :clearable="false"
             class="o-select"
+            popper-class="o-popper"
           />
         </el-form-item>
       </el-form>
