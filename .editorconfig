@@ -1,0 +1,6 @@
+# 控制 .editorconfig 是否生效的字段
+root = true
+# 匹配全部文件
+[*]
+# 结尾换行符，可选"lf"、"cr"、"crlf"
+end_of_line = lf

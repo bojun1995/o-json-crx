@@ -19,7 +19,7 @@
           <span class="o-divider__text">功能</span>
         </el-divider>
         <el-form-item label="自动读取剪切板">
-          <el-switch v-model="setForm.useAutoReadClipboard" />
+          <el-switch v-model="setForm.useAutoReadClipboard" class="o-switch" />
         </el-form-item>
         <el-divider content-position="left" class="o-divider">
           <span class="o-divider__text">主题模式</span>

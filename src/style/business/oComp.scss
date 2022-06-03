@@ -1,6 +1,8 @@
 .o-dialog {
   &.el-dialog {
     border-radius: $g_radius;
+    @include background-color('dialogBgColor');
+
     @include theme-control {
       border: 2px solid get-theme-val('dialogBgColor');
     }
@@ -29,6 +31,7 @@
       border-top-color: get-theme-val('logoColor');
     }
   }
+
   .o-divider__text {
     @include font-color('fontColor');
   }
@@ -41,5 +44,16 @@
 .o-form {
   .el-form-item__label {
     @include font-color('fontColor');
+  }
+}
+
+.o-switch {
+  &.is-checked {
+    .el-switch__core {
+      @include theme-control {
+        border-color: get-theme-val('logoColor') !important;
+        background-color: get-theme-val('logoColor') !important;
+      }
+    }
   }
 }
