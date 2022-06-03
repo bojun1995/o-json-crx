@@ -43,6 +43,10 @@ export default () => {
       const curMills = new Date().getTime()
       const chg2SunMills = new Date(`${curDateStr} ${setConfig.chgToSunThemeTime}`).getTime()
       const chg2MoonMills = new Date(`${curDateStr} ${setConfig.chgToMoonThemeTime}`).getTime()
+      const chg2SunDifMills = chg2SunMills - curMills
+      const chg2MoonDifMills = chg2MoonMills - curMills
+
+      // 清除定时器
       if (null !== chg2SunTimer) {
         clearTimeout(chg2SunTimer)
         chg2SunTimer = null
@@ -51,16 +55,28 @@ export default () => {
         clearTimeout(chg2MoonTimer)
         chg2MoonTimer = null
       }
-      // consoleUtil.log(`chg2SunDiffMills = ${chg2SunMills - curMills}, chg2MoonDiffMills = ${chg2MoonMills - curMills}`)
-      if (chg2SunMills - curMills >= 0) {
-        doChg2Sun(chg2SunMills - curMills)
+      // 开启
+      // consoleUtil.log(`chg2SunDifMills = ${chg2SunDifMills}, chg2MoonDifMills = ${chg2MoonDifMills}`)
+      if (chg2SunDifMills >= 0) {
+        doChg2Sun(chg2SunDifMills)
       } else {
-        doChg2Sun(chg2SunMills + oneDayMills - curMills)
+        doChg2Sun(chg2SunDifMills + oneDayMills)
       }
-      if (chg2MoonMills - curMills >= 0) {
-        doChg2Moon(chg2MoonMills - curMills)
+      if (chg2MoonDifMills >= 0) {
+        doChg2Moon(chg2MoonDifMills)
       } else {
-        doChg2Moon(chg2MoonMills + oneDayMills - curMills)
+        doChg2Moon(chg2MoonDifMills + oneDayMills)
+      }
+      // 立刻切换
+      // consoleUtil.log(`chg2SunDifMills = ${chg2SunDifMills}, chg2MoonDifMills = ${chg2MoonDifMills}`)
+      if (chg2SunDifMills > 0 && chg2MoonDifMills > 0) {
+        chgTheme('matrix', false)
+      }
+      if (chg2SunDifMills < 0 && chg2MoonDifMills > 0) {
+        chgTheme('sunlight', false)
+      }
+      if (chg2SunDifMills < 0 && chg2MoonDifMills < 0) {
+        chgTheme('matrix', false)
       }
     }
   }

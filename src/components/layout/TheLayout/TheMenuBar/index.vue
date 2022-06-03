@@ -42,7 +42,7 @@
 </template>
 <script setup>
 // sys
-import { ref, watch } from 'vue'
+import { ref, watch, watchEffect } from 'vue'
 import { useAppStore } from '@/store/app'
 // element
 import { Sunny, Moon } from '@element-plus/icons-vue'
@@ -53,25 +53,27 @@ import useThemeUtil from '@/utils/theme'
 
 const emit = defineEmits(['on-set-btn-clk'])
 
+const appStore = useAppStore()
+
 const themeUtil = useThemeUtil()
 const themeSwitch = ref({
-  isSunTheme: 'sunlight',
+  isSunTheme: appStore.cp_themeName,
   onThemeChg: (val) => {
     const themeName = 'sunlight' === val ? 'sunlight' : 'matrix'
     themeUtil.chgTheme(themeName)
   },
 })
 
-const appStore = useAppStore()
 watch(
   () => appStore.cp_themeName,
   () => {
     themeSwitch.value.isSunTheme = appStore.cp_themeName
+    // console.log('do watch = ' + themeSwitch.value.isSunTheme)
   }
 )
 // setTimeout(() => {
-//   themeUtil.chgTheme('matrix')
-//   console.log('do setTimeout = ' + curThemeName)
+//   themeUtil.chgTheme('sunlight')
+//   // console.log('do setTimeout = ' + themeSwitch.value.isSunTheme)
 // }, 1000)
 
 const nameInput = ref({
