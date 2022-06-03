@@ -5,9 +5,11 @@ export default () => {
   const themePack = {
     sunlight: {
       logoColor: '#ff6768',
+      fontColor: '2d323c',
     },
     matrix: {
       logoColor: '#41b883',
+      fontColor: '#f0f0f0',
     },
   }
   const chgTheme = (themeName = 'sunlight') => {

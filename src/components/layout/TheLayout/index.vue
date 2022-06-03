@@ -8,14 +8,15 @@
 <script setup>
 // sys
 import { ref } from 'vue'
-import { useAppStore } from '@/store/app'
+import useThemeUtil from '@/utils/theme'
 // comp
 import TheMenuBar from './TheMenuBar/index.vue'
 import TheEditorBox from './TheEditorBox/index.vue'
 import TheSetDialog from './TheSetDialog/index.vue'
 
-const appStore = useAppStore()
-appStore.doChgThemeName('sunlight')
+// default theme
+const themeUtil = useThemeUtil()
+themeUtil.chgTheme()
 
 // childRef
 const theSetDialogRef = ref()
