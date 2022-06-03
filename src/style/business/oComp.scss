@@ -57,3 +57,30 @@
     }
   }
 }
+
+.o-radio-group {
+  .is-checked {
+    .el-radio__inner {
+      @include theme-control {
+        border-color: get-theme-val('logoColor') !important;
+        background-color: get-theme-val('logoColor') !important;
+      }
+    }
+
+    .el-radio__label {
+      @include font-color('logoColor');
+    }
+  }
+
+  .el-radio__label {
+    @include font-color('fontColor');
+  }
+}
+
+.o-select {
+  .is-focus .el-input__wrapper {
+    @include theme-control {
+      box-shadow: 0 0 0 1px get-theme-val('logoColor') inset !important;
+    }
+  }
+}

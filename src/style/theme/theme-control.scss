@@ -1,5 +1,5 @@
-@import './theme-pack/matrix.scss';
-@import './theme-pack/sunlight.scss';
+@import './theme-pack/matrix.module.scss';
+@import './theme-pack/sunlight.module.scss';
 
 $theme-list: (
 	matrix: $matrix,

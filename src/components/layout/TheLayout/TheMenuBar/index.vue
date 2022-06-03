@@ -47,6 +47,9 @@ import { useAppStore } from '@/store/app'
 import { Sunny, Moon } from '@element-plus/icons-vue'
 // file
 import LogoPic from '@/assets/icons/logo_with_white_bg.png'
+// util
+import useThemeUtil from '@/utils/theme'
+const themeUtil = useThemeUtil()
 
 const emit = defineEmits(['on-set-btn-clk'])
 
@@ -56,6 +59,7 @@ const themeSwitch = ref({
   onThemeChg: (val) => {
     const themeName = 'sun' === val ? 'sunlight' : 'matrix'
     appStore.doChgThemeName(themeName)
+    themeUtil.chgTheme()
   },
 })
 

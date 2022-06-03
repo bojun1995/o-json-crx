@@ -25,7 +25,7 @@
           <span class="o-divider__text">主题模式</span>
         </el-divider>
         <el-form-item label="切换主题">
-          <el-radio-group v-model="setForm.useAutoChgTheme">
+          <el-radio-group v-model="setForm.useAutoChgTheme" class="o-radio-group">
             <el-radio label="auto">跟随设置</el-radio>
             <el-radio label="sys">跟随系统</el-radio>
             <el-radio label="none">不自动切换</el-radio>
@@ -40,6 +40,7 @@
             end="23:45"
             placeholder="选择时间点"
             :clearable="false"
+            class="o-select"
           />
         </el-form-item>
         <el-form-item v-show="'auto' == setForm.useAutoChgTheme" label="切换至夜间主题">
@@ -51,6 +52,7 @@
             end="23:45"
             placeholder="选择时间点"
             :clearable="false"
+            class="o-select"
           />
         </el-form-item>
       </el-form>
