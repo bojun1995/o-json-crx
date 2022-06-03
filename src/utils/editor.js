@@ -1,13 +1,13 @@
 // plugin
 // doc https://github.com/josdejong/jsoneditor/blob/develop/docs/api.md
 import JSONEditor from 'jsoneditor'
-import consoleUtil from '@/utils/console'
+import useConsole from '@/utils/console'
 // element
 import { ElNotification } from 'element-plus'
 
 export default () => {
   const editorMap = {}
-  // const consoleUtil = consoleUtil
+  const consoleUtil = useConsole
   const init = (domId, options, jsonObj) => {
     const container = document.getElementById(domId)
     editorMap[domId] = new JSONEditor(container, options, jsonObj)

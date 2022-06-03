@@ -65,14 +65,19 @@
 import { ref } from 'vue'
 // store
 import { useAppStore } from '@/store/app'
+// util
+import useThemeUtil from '@/utils/theme'
 
 const appStore = useAppStore()
 const appSetConfig = appStore.getSetConfig()
+
+const themeUtil = useThemeUtil()
 
 const setDialog = ref({
   visible: false,
   onClose: () => {
     appStore.chgSetConfig(setForm.value)
+    themeUtil.chgThemeBySetConfig()
   },
 })
 

@@ -11,10 +11,10 @@ import { onMounted } from 'vue'
 // store
 import { useAppStore } from '@/store/app'
 //util
-import editorUtil from '@/utils/editor'
-import consoleUtil from '@/utils/console'
-const consoleCtrl = consoleUtil()
-const editorCtrl = editorUtil()
+import useEditor from '@/utils/editor'
+import useConsole from '@/utils/console'
+const consoleUtil = useConsole()
+const editorUtil = useEditor()
 
 const appStore = useAppStore()
 const setConfig = appStore.getSetConfig()
@@ -26,30 +26,30 @@ const inputOpts = {
   onChangeText: (text) => {
     try {
       const jsonObj = JSON.parse(text)
-      editorCtrl.updateJson('output', jsonObj)
-      // consoleCtrl.log(JSON.stringify(jsonObj))
-      consoleCtrl.log('sync text success')
+      editorUtil.updateJson('output', jsonObj)
+      consoleUtil.log(JSON.stringify(jsonObj))
+      consoleUtil.log('sync text success')
     } catch (err) {
-      // consoleCtrl.err(`parse json error: ${text}`)
-      consoleCtrl.err('parse fail')
+      consoleUtil.err(`parse json error: ${text}`)
+      consoleUtil.err('parse fail')
     }
   },
-  onModeChange: (newMode, oldMode) => editorCtrl.onModeChg(newMode, oldMode),
+  onModeChange: (newMode, oldMode) => editorUtil.onModeChg(newMode, oldMode),
 }
 const outputOpts = {
   // name: 'output',
   mode: 'tree',
   modes: ['code', 'form', 'text', 'tree', 'view', 'preview'],
-  onModeChange: (newMode, oldMode) => editorCtrl.onModeChg(newMode, oldMode),
+  onModeChange: (newMode, oldMode) => editorUtil.onModeChg(newMode, oldMode),
 }
 
 onMounted(() => {
-  editorCtrl.init('input', inputOpts)
-  editorCtrl.init('output', outputOpts)
-  editorCtrl.replaceEditorIcon()
+  editorUtil.init('input', inputOpts)
+  editorUtil.init('output', outputOpts)
+  editorUtil.replaceEditorIcon()
   // 是否读取剪切板
   if (true == setConfig.useAutoReadClipboard) {
-    editorCtrl.readClipboard('input')
+    editorUtil.readClipboard('input')
   }
 })
 </script>
