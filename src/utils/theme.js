@@ -34,6 +34,8 @@ export default () => {
         title: 'o-json',
         message: '已为您切换主题',
         type: 'success',
+        duration: 500000,
+        customClass: 'o-notification',
       })
     }
   }

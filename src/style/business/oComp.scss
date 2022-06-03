@@ -109,3 +109,18 @@
     @include font-color('fontColor');
   }
 }
+
+.o-notification {
+  &.el-notification {
+    @include theme-control {
+      background-color: get-theme-val('dialogBgColor');
+    }
+    .el-notification__title {
+      @include font-color('fontColor');
+    }
+    .el-notification__content {
+      @include font-color('fontColor');
+    }
+    border: unset;
+  }
+}
