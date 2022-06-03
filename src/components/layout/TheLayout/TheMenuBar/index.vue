@@ -13,6 +13,7 @@
         placeholder="输入标签页名"
         size="normal"
         clearable
+        class="o-input"
         @change="nameInput.onValChg"
       >
         <template #prefix>

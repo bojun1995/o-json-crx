@@ -84,3 +84,28 @@
     }
   }
 }
+
+.o-input {
+  .el-input__wrapper {
+    @include background-color('layoutBgColor');
+    box-shadow: unset;
+
+    &:hover {
+      box-shadow: unset;
+    }
+
+    &.is-focus {
+      @include theme-control {
+        box-shadow: 0 0 0 1px get-theme-val('logoColor') inset !important;
+      }
+    }
+  }
+
+  .el-input__prefix {
+    @include font-color('fontColor');
+  }
+
+  .el-input__inner {
+    @include font-color('fontColor');
+  }
+}
