@@ -79,8 +79,8 @@ const setDialog = ref({
 const setForm = ref({
   useAutoReadClipboard: appSetConfig.useAutoReadClipboard,
   useAutoChgTheme: appSetConfig.useAutoChgTheme,
-  chgToSunThemeTime: appSetConfig.chgToSunThemeTime,
-  chgToMoonThemeTime: appSetConfig.chgToMoonThemeTime,
+  chgToSunThemeTime: appSetConfig.chgToSunThemeTime ?? '09:00',
+  chgToMoonThemeTime: appSetConfig.chgToMoonThemeTime ?? '17:30',
 })
 
 const doShow = () => {

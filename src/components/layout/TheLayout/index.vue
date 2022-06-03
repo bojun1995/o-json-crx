@@ -21,6 +21,7 @@ const appStore = useAppStore()
 const themeUtil = useThemeUtil()
 themeUtil.chgTheme()
 // chg themeClock
+themeUtil.chgThemeBySetConfig()
 
 // childRef
 const theSetDialogRef = ref()

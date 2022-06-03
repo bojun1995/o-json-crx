@@ -43,7 +43,6 @@
 <script setup>
 // sys
 import { ref } from 'vue'
-import { useAppStore } from '@/store/app'
 // element
 import { Sunny, Moon } from '@element-plus/icons-vue'
 // file
@@ -54,7 +53,6 @@ const themeUtil = useThemeUtil()
 
 const emit = defineEmits(['on-set-btn-clk'])
 
-const appStore = useAppStore()
 const themeSwitch = ref({
   isSunTheme: 'sun',
   onThemeChg: (val) => {
@@ -66,7 +64,11 @@ const themeSwitch = ref({
 const nameInput = ref({
   nameVal: '',
   onValChg: (val) => {
-    document.title = val
+    let title = 'o-json'
+    if (val) {
+      title = val
+    }
+    document.title = title
   },
 })
 
