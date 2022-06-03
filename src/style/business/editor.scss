@@ -17,6 +17,17 @@
     }
   }
 
+  :deep(.jsoneditor-contextmenu) {
+    .jsoneditor-menu {
+      box-shadow: unset;
+      & button {
+        @include theme-control {
+          background-color: get-theme-val('headBgColor') !important;
+        }
+      }
+    }
+  }
+
   :deep(.jsoneditor-menu) {
     @include background-color('headBgColor');
 
@@ -26,11 +37,16 @@
 
     & button {
       background-image: unset;
+      // @include theme-control {
+      //   background-color: get-theme-val('headBgColor') !important;
+      // }
       @include font-color('fontColor');
     }
 
     & button:hover {
-      @include background-color('logoColor')
+      @include theme-control {
+        background-color: get-theme-val('logoColor') !important;
+      }
     }
 
   }
@@ -68,9 +84,9 @@
     @include o-scroll;
     @include background-color('headBgColor');
 
-    div {
-      @include font-color__imp('fontColor');
-    }
+    // div {
+    //   @include font-color__imp('fontColor');
+    // }
   }
 
   :deep(.jsoneditor-highlight) {
@@ -97,8 +113,8 @@
     &:hover,
     &:focus {
       @include theme-control {
-        background-color: get-theme-val('logoColor');
-        border-color: get-theme-val('logoColor');
+        background-color: get-theme-val('editorSelectionColor');
+        border-color: get-theme-val('editorSelectionColor');
       }
     }
   }
@@ -176,5 +192,40 @@
 
   :deep(.ace_scrollbar) {
     @include o-scroll;
+  }
+
+  :deep(.jsoneditor-field) {
+    @include font-color('fontColor');
+  }
+
+  :deep(.jsoneditor-readonly) {
+    @include font-color('fontColor');
+  }
+
+  :deep(.jsoneditor-color-value) {
+    @include font-color('fontColor');
+  }
+
+  :deep(.jsoneditor-object) {
+    @include font-color('logoColor');
+  }
+
+  :deep(.jsoneditor-array) {
+    @include font-color('logoColor');
+  }
+
+  :deep(.jsoneditor-string) {
+    @include font-color('logoColor');
+  }
+
+  :deep(.jsoneditor-button) {
+    &:focus {
+      @include background-color('logoColor');
+      outline: unset;
+    }
+  }
+
+  :deep(.jsoneditor-icon) {
+    top: 2px;
   }
 }
