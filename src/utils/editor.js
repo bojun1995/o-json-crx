@@ -40,11 +40,11 @@ export default () => {
   }
   const replaceEditorIcon = () => {
     const targetClassList = [
-      { from: 'jsoneditor-format', to: 'ri-magic-line' },
-      { from: 'jsoneditor-compact', to: 'ri-align-vertically' },
+      { from: 'jsoneditor-format', to: 'ri-align-bottom' },
+      { from: 'jsoneditor-compact', to: 'ri-align-top' },
       { from: 'jsoneditor-sort', to: 'ri-sort-desc' },
       { from: 'jsoneditor-transform', to: 'ri-find-replace-line' },
-      { from: 'jsoneditor-repair', to: 'ri-bug-line' },
+      { from: 'jsoneditor-repair', to: 'ri-magic-line' },
       { from: 'jsoneditor-undo', to: 'ri-arrow-go-back-line' },
       { from: 'jsoneditor-redo', to: 'ri-arrow-go-forward-line' },
       { from: 'jsoneditor-expand-all', to: 'ri-align-bottom' },

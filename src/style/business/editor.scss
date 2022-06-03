@@ -36,14 +36,14 @@
   }
 
   :deep(.jsoneditor-frame) {
-    @include background-color__no-trans('layoutBgColor');
+    @include background-color('layoutBgColor');
     border-radius: 4px;
     overflow: hidden;
 
     & input {
       line-height: 20px;
       @include font-color('fontColor');
-      @include background-color__no-trans('layoutBgColor');
+      @include background-color('layoutBgColor');
     }
   }
 
