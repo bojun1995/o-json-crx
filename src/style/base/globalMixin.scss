@@ -9,3 +9,34 @@
 	text-overflow: ellipsis;
 	overflow: hidden;
 }
+
+/**
+ * @description : 滚动条
+ */
+@mixin o-scroll () {
+	@include background-color('headBgColor');
+	right: 1px;
+
+	&::-webkit-scrollbar {
+		// width: 6px;
+		// border-radius: 3px;
+		width: 10px;
+		border-radius: 5px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		@include theme-control {
+			background-color: get-theme-val('editorSelectedColor');
+		}
+
+		border-radius: 5px;
+		min-height: 100px;
+	}
+
+	// &:hover {
+	// 	&::-webkit-scrollbar {
+	// 		width: 10px;
+	// 		border-radius: 5px;
+	// 	}
+	// }
+}

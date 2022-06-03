@@ -24,6 +24,7 @@ export default () => {
             title: 'o-json',
             message: '已自动解析剪切板JSON',
             type: 'success',
+            customClass: 'o-notification',
           })
         }
         consoleUtil().log(`parse clipboard success`)

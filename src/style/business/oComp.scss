@@ -135,6 +135,7 @@
     &.hover {
       @include background-color('editorSelectedColor');
     }
+
     &:hover {
       @include background-color('editorSelectedColor');
     }
@@ -170,6 +171,19 @@
   &.el-notification {
     @include theme-control {
       background-color: get-theme-val('dialogBgColor');
+      color: get-theme-val('logoColor') !important;
+    }
+
+    .el-notification__icon {
+      @include font-color('logoColor');
+    }
+
+    .el-notification__closeBtn {
+      @include font-color('fontColor');
+
+      &:hover {
+        @include font-color('logoColor');
+      }
     }
 
     .el-notification__title {

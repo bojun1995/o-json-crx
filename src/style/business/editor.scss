@@ -65,6 +65,7 @@
 
   // 背景色
   :deep(.jsoneditor-tree) {
+    @include o-scroll;
     @include background-color('headBgColor');
 
     div {
@@ -153,5 +154,25 @@
 
   :deep(td.jsoneditor-separator) {
     padding: 6px 0;
+  }
+
+  :deep(.ace_indent-guide) {
+    background: unset;
+  }
+
+  :deep(.ace_selection) {
+    @include background-color('editorSelectedColor');
+  }
+
+  :deep(.ace_editor) {
+    @include background-color('headBgColor');
+  }
+
+  :deep(.ace_scroller) {
+    @include background-color('headBgColor');
+  }
+
+  :deep(.ace_scrollbar) {
+    @include o-scroll;
   }
 }
