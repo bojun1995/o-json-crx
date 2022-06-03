@@ -21,7 +21,7 @@ export default () => {
           editorMap['input'].update(JSON.parse(val))
           editorMap['output'].update(JSON.parse(val))
           ElNotification({
-            title: '解析成功',
+            title: 'o-json',
             message: '已自动解析剪切板JSON',
             type: 'success',
           })

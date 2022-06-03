@@ -12,6 +12,9 @@ export const useAppStore = defineStore('app', {
       configKey: 'APP_SET_CFG',
     }
   },
+  getters: {
+    cp_themeName: (state) => state.themeName,
+  },
   actions: {
     doChgThemeName(themeName) {
       this.themeName = themeName

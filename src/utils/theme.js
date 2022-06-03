@@ -4,6 +4,8 @@ import dayjs from 'dayjs'
 import { useAppStore } from '@/store/app'
 // util
 import useConsole from '@/utils/console'
+// element
+import { ElNotification } from 'element-plus'
 
 export default () => {
   const appStore = useAppStore()
@@ -23,10 +25,17 @@ export default () => {
       fontColor: '#f0f0f0',
     },
   }
-  const chgTheme = (themeName = 'sunlight') => {
+  const chgTheme = (themeName = 'sunlight', showMsg = true) => {
     const logoColor = themePack[themeName]['logoColor']
     document.body.style.setProperty('--el-color-primary', logoColor)
     appStore.doChgThemeName(themeName)
+    if (showMsg) {
+      ElNotification({
+        title: 'o-json',
+        message: '已为您切换主题',
+        type: 'success',
+      })
+    }
   }
   const chgThemeBySetConfig = () => {
     if ('auto' == setConfig.useAutoChgTheme) {
@@ -42,7 +51,7 @@ export default () => {
         clearTimeout(chg2MoonTimer)
         chg2MoonTimer = null
       }
-      consoleUtil.log(`chg2SunDiffMills = ${chg2SunMills - curMills}, chg2MoonDiffMills = ${chg2MoonMills - curMills}`)
+      // consoleUtil.log(`chg2SunDiffMills = ${chg2SunMills - curMills}, chg2MoonDiffMills = ${chg2MoonMills - curMills}`)
       if (chg2SunMills - curMills >= 0) {
         doChg2Sun(chg2SunMills - curMills)
       } else {

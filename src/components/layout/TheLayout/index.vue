@@ -9,17 +9,14 @@
 // sys
 import { ref } from 'vue'
 import useThemeUtil from '@/utils/theme'
-import { useAppStore } from '@/store/app'
 // comp
 import TheMenuBar from './TheMenuBar/index.vue'
 import TheEditorBox from './TheEditorBox/index.vue'
 import TheSetDialog from './TheSetDialog/index.vue'
 
-const appStore = useAppStore()
-
 // default theme
 const themeUtil = useThemeUtil()
-themeUtil.chgTheme()
+themeUtil.chgTheme('sunlight', false)
 // chg themeClock
 themeUtil.chgThemeBySetConfig()
 

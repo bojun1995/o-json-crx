@@ -27,8 +27,8 @@
       <el-switch
         v-model="themeSwitch.isSunTheme"
         inline-prompt
-        active-value="moon"
-        inactive-value="sun"
+        active-value="matrix"
+        inactive-value="sunlight"
         :active-icon="Moon"
         :inactive-icon="Sunny"
         active-color="#41b883"
@@ -42,24 +42,37 @@
 </template>
 <script setup>
 // sys
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import { useAppStore } from '@/store/app'
 // element
 import { Sunny, Moon } from '@element-plus/icons-vue'
 // file
 import LogoPic from '@/assets/icons/logo_with_white_bg.png'
 // util
 import useThemeUtil from '@/utils/theme'
-const themeUtil = useThemeUtil()
 
 const emit = defineEmits(['on-set-btn-clk'])
 
+const themeUtil = useThemeUtil()
 const themeSwitch = ref({
-  isSunTheme: 'sun',
+  isSunTheme: 'sunlight',
   onThemeChg: (val) => {
-    const themeName = 'sun' === val ? 'sunlight' : 'matrix'
+    const themeName = 'sunlight' === val ? 'sunlight' : 'matrix'
     themeUtil.chgTheme(themeName)
   },
 })
+
+const appStore = useAppStore()
+watch(
+  () => appStore.cp_themeName,
+  () => {
+    themeSwitch.value.isSunTheme = appStore.cp_themeName
+  }
+)
+// setTimeout(() => {
+//   themeUtil.chgTheme('matrix')
+//   console.log('do setTimeout = ' + curThemeName)
+// }, 1000)
 
 const nameInput = ref({
   nameVal: '',
