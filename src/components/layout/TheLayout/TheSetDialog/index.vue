@@ -5,7 +5,7 @@
     :modal="false"
     :close-on-click-modal="true"
     custom-class="o-dialog"
-    @close="setDialog.onClose"
+    @closed="setDialog.onClosed"
   >
     <template #header="{ close, titleId, titleClass }">
       <div class="set-dialog__header">
@@ -75,7 +75,7 @@ const themeUtil = useThemeUtil()
 
 const setDialog = ref({
   visible: false,
-  onClose: () => {
+  onClosed: () => {
     appStore.chgSetConfig(setForm.value)
     themeUtil.chgThemeBySetConfig()
   },
