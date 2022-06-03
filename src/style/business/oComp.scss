@@ -133,11 +133,11 @@
     }
 
     &.hover {
-      @include background-color('editorSelectedColor');
+      @include background-color('editorActiveColor');
     }
 
     &:hover {
-      @include background-color('editorSelectedColor');
+      @include background-color('editorActiveColor');
     }
   }
 }

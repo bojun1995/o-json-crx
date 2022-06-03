@@ -26,7 +26,7 @@
 
 	&::-webkit-scrollbar-thumb {
 		@include theme-control {
-			background-color: get-theme-val('editorSelectedColor');
+			background-color: get-theme-val('editorActiveColor');
 		}
 
 		border-radius: 5px;
