@@ -62,7 +62,7 @@
 
 <script setup>
 // sys
-import { ref, defineExpose } from 'vue'
+import { ref } from 'vue'
 // store
 import { useAppStore } from '@/store/app'
 

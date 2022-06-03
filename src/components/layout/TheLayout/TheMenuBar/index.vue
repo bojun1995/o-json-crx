@@ -41,7 +41,7 @@
 </template>
 <script setup>
 // sys
-import { ref, defineEmits } from 'vue'
+import { ref } from 'vue'
 import { useAppStore } from '@/store/app'
 // element
 import { Sunny, Moon } from '@element-plus/icons-vue'
@@ -58,8 +58,7 @@ const themeSwitch = ref({
   isSunTheme: 'sun',
   onThemeChg: (val) => {
     const themeName = 'sun' === val ? 'sunlight' : 'matrix'
-    appStore.doChgThemeName(themeName)
-    themeUtil.chgTheme()
+    themeUtil.chgTheme(themeName)
   },
 })
 
