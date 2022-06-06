@@ -1,9 +1,14 @@
 <template>
-  <div>o-json</div>
+  <div class="popup">
+    <h3>o-json is running</h3>
+  </div>
 </template>
 
-<script setup>
-import { reactive } from 'vue'
-</script>
+<script setup></script>
 
-<style lang="scss" rel="stylesheet/scss" type="text/scss" scoped></style>
+<style lang="scss" rel="stylesheet/scss" type="text/scss" scoped>
+.popup {
+  width: 10rem;
+  text-align: center;
+}
+</style>
