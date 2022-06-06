@@ -37,7 +37,7 @@ const inputOpts = {
   onModeChange: (newMode, oldMode) => editorUtil.onModeChg(newMode, oldMode),
 }
 const outputOpts = {
-  // name: 'output',
+  name: 'output',
   mode: 'tree',
   modes: ['code', 'form', 'text', 'tree', 'view', 'preview'],
   onModeChange: (newMode, oldMode) => editorUtil.onModeChg(newMode, oldMode),
