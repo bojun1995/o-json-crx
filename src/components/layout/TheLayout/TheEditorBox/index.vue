@@ -22,7 +22,7 @@ const setConfig = appStore.getSetConfig()
 const inputOpts = {
   // name: 'input',
   mode: 'code',
-  modes: ['code', 'form', 'text', 'tree', 'view', 'preview'],
+  // modes: ['code', 'form', 'text', 'tree', 'view', 'preview'],
   onChangeText: (text) => {
     try {
       const jsonObj = JSON.parse(text)

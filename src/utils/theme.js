@@ -32,7 +32,7 @@ export default () => {
     if (showMsg) {
       ElNotification({
         title: 'o-json',
-        message: '已为您切换主题',
+        message: '已切换主题',
         type: 'success',
         customClass: 'o-notification',
       })
