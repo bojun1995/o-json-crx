@@ -64,6 +64,11 @@ export default () => {
       }
     })
   }
+  const getTsInterfaceByJson = (json) => {}
+  const parseJsonToTs = () => {
+    const inputText = editorMap['input'].getText()
+    const tsInf = getTsInterfaceByJson(inputText)
+  }
   return {
     editorMap,
     init,
@@ -71,5 +76,7 @@ export default () => {
     onModeChg,
     replaceEditorIcon,
     readClipboard,
+    getTsInterfaceByJson,
+    parseJsonToTs,
   }
 }

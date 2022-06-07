@@ -2,7 +2,7 @@
   <div class="the-editor-box">
     <div id="input" class="custom-editor editor-input"></div>
     <div id="output" class="custom-editor editor-output"></div>
-    <div class="ts-btn">
+    <div class="ts-btn" @click="tsBtn.onClk">
       <span>TS</span>
     </div>
   </div>
@@ -10,7 +10,7 @@
 <script setup>
 // https://github.com/josdejong/jsoneditor/blob/master/docs/api.md
 // sys
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 // store
 import { useAppStore } from '@/store/app'
 //util
@@ -21,6 +21,12 @@ const editorUtil = useEditor()
 
 const appStore = useAppStore()
 const setConfig = appStore.getSetConfig()
+
+const tsBtn = ref({
+  onClk: () => {
+    editorUtil.parseJsonToTs()
+  },
+})
 
 const inputOpts = {
   // name: 'input',
