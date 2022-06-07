@@ -4,8 +4,9 @@
   </a>
 </p>
 
+> Chrome Extension of JSON Format
+
 # o-json
-Chrome Extension of JSON Format
 
 [EN](https://github.com/bojun1995/o-json-crx/blob/master/README.md) | [中文](https://github.com/bojun1995/o-json-crx/blob/master/README-CN.md)
 

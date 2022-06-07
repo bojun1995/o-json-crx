@@ -4,8 +4,9 @@
   </a>
 </p>
 
+> JSON解析格式化Chrome插件
+
 # o-json
-JSON解析格式化Chrome插件
 
 [EN](https://github.com/bojun1995/o-json-crx/blob/master/README.md) | [中文](https://github.com/bojun1995/o-json-crx/blob/master/README-CN.md)
 
@@ -22,7 +23,7 @@ JSON解析格式化Chrome插件
 
 
 ## 开发方式
-#### Install
+#### 安装依赖
 ```
 #yarn
 yarn i
@@ -30,14 +31,14 @@ yarn i
 #npm
 npm i
 ```
-#### Development
+#### 本地开发
 ```
 1. yarn dev
 # 编译后路径为 /dist
 
 2. 按照上方使用方式-本地文件模式选择项目/dist路径
 ```
-#### Releases
+#### 本地打包插件
 ```
 yarn releases
 # 编译后路径为 /releases
