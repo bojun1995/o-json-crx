@@ -3,7 +3,7 @@
     <div id="input" class="custom-editor editor-input"></div>
     <div id="output" class="custom-editor editor-output"></div>
     <div class="ts-btn">
-      <i></i>
+      <span>TS</span>
     </div>
   </div>
 </template>
@@ -73,6 +73,7 @@ export default {
   // 50px the-menu-bar height
   // 20px padding
   max-height: calc(100% - 50px - 20px);
+  position: relative;
 }
 .editor-input {
   width: 30%;
@@ -81,5 +82,25 @@ export default {
 .editor-output {
   width: 70%;
   max-height: 100%;
+}
+
+.ts-btn {
+  height: 26px;
+  width: 26px;
+  border-radius: 3px;
+  position: absolute;
+  left: 222px;
+  top: 15px;
+  line-height: 26px;
+  text-align: center;
+
+  user-select: none;
+  @include font-color('fontColor');
+
+  &:hover {
+    background-color: #3179c7;
+    color: #ffffff;
+    transition: background-color $g_transitionParam;
+  }
 }
 </style>
