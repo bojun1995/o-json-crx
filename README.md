@@ -1,12 +1,22 @@
+<p align="center">
+  <a href="https://github.com/bojun1995/o-json-crx" target="_blank">
+    <img width="180" src="https://github.com/bojun1995/o-json-crx/blob/master/backup/o-tools%20%E7%99%BD%E5%BA%95.png" alt="logo">
+  </a>
+</p>
+
 # o-json
 Chrome Extension of JSON Format
+
+[EN](https://github.com/bojun1995/o-json-crx/blob/master/README.md) | [中文](https://github.com/bojun1995/o-json-crx/blob/master/README-CN.md)
+
 ## Install Instructions
 ### 1. Install Locally
 
 * Download the [Releases](https://github.com/bojun1995/o-json-crx/releases)
 
-* Unzip the file.
-* Load the unzipped releases folder in [Chrome extensions](chrome://extensions/)
+* Unpack the file.
+* Open [chrome://extensions/](chrome://extensions/) in Chrome
+* Load the unpacked releases folder
   
 ### 2. Download in [Chrome Web Store](https://chrome.google.com/)
 

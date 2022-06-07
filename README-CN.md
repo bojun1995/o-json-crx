@@ -1,16 +1,21 @@
+<p align="center">
+  <a href="https://github.com/bojun1995/o-json-crx" target="_blank">
+    <img width="180" src="https://github.com/bojun1995/o-json-crx/blob/master/backup/o-tools%20%E7%99%BD%E5%BA%95.png" alt="logo">
+  </a>
+</p>
+
 # o-json
 JSON解析格式化Chrome插件
+
+[EN](https://github.com/bojun1995/o-json-crx/blob/master/README.md) | [中文](https://github.com/bojun1995/o-json-crx/blob/master/README-CN.md)
+
 ## 使用方式
 #### 1. 本地文件
-下载[最新releases文件](https://github.com/bojun1995/o-json-crx/releases)
 
-```
-1. 解压
-2.1 Chrome访问 chrome://extensions/
-2.2 或者 打开Chrome，点击右上角 拓展程序 图标(头像左侧)，点击弹窗下方 管理拓展程序
-3. 加载已解压的扩展程序 选择文件夹
-
-```
+- 下载[最新releases文件](https://github.com/bojun1995/o-json-crx/releases)
+- 解压
+- Chrome访问 [chrome://extensions/](chrome://extensions/)
+- 加载已解压的扩展程序 选择文件夹
 
 
 #### 2. Chrome插件商店下载(审核中)
