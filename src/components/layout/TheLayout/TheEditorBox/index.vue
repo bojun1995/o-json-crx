@@ -2,9 +2,9 @@
   <div class="the-editor-box">
     <div id="input" class="custom-editor editor-input"></div>
     <div id="output" class="custom-editor editor-output"></div>
-    <div class="ts-btn" @click="tsBtn.onClk">
+    <!-- <div class="ts-btn" @click="tsBtn.onClk">
       <span>TS</span>
-    </div>
+    </div> -->
   </div>
 </template>
 <script setup>
