@@ -16,7 +16,7 @@ import TheSetDialog from './TheSetDialog/index.vue'
 
 // default theme
 const themeUtil = useThemeUtil()
-themeUtil.chgTheme('sunlight', false)
+// themeUtil.chgTheme('sunlight', false)
 // chg themeClock
 themeUtil.chgThemeBySetConfig()
 
