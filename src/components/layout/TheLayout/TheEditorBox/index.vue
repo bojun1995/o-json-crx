@@ -3,7 +3,7 @@
     <div id="input" class="custom-editor editor-input"></div>
     <div id="output" class="custom-editor editor-output"></div>
     <div class="ts-btn" @click="tsBtn.onClk">
-      <span>TS</span>
+      <span title="把JSON转换为TS Interface">TS</span>
     </div>
   </div>
 </template>

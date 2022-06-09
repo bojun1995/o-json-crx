@@ -83,6 +83,22 @@ export default () => {
         }
       }
     }
+
+    if ('sys' == setConfig.useAutoChgTheme) {
+      const lightMedia = window.matchMedia('(prefers-color-scheme:light)')
+      if (lightMedia.matches) {
+        chgTheme('sunlight', false)
+      } else {
+        chgTheme('matrix', false)
+      }
+      lightMedia.addEventListener('change', (e) => {
+        if (e.matches) {
+          chgTheme('sunlight', false)
+        } else {
+          chgTheme('matrix', false)
+        }
+      })
+    }
   }
   const doChg2Sun = (delay = oneDayMills) => {
     chg2SunTimer = setTimeout(() => {

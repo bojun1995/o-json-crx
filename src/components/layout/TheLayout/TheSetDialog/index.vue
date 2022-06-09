@@ -27,7 +27,7 @@
         <el-form-item label="切换主题">
           <el-radio-group v-model="setForm.useAutoChgTheme" class="o-radio-group">
             <el-radio label="auto">跟随设置</el-radio>
-            <!-- <el-radio label="sys">跟随系统</el-radio> -->
+            <el-radio label="sys">跟随系统</el-radio>
             <el-radio label="none">不自动切换</el-radio>
           </el-radio-group>
         </el-form-item>
