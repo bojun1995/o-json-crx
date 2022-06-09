@@ -37,22 +37,22 @@ const inputOpts = {
   // modes: ['code', 'form', 'text', 'tree', 'view', 'preview'],
   onChangeText: (text) => {
     try {
-      const jsonObj = JSON.parse(text)
+      const jsonObj = Object.assign({}, JSON.parse(text))
       editorUtil.updateJson('output', jsonObj)
       consoleUtil.log(JSON.stringify(jsonObj))
       consoleUtil.log('sync text success')
     } catch (err) {
-      consoleUtil.err(`parse json error: ${text}`)
-      consoleUtil.err('parse fail')
+      // consoleUtil.err(`parse json error: ${text}`)
+      consoleUtil.err(`parse fail = ${err}`)
     }
   },
-  onModeChange: (newMode, oldMode) => editorUtil.onModeChg(newMode, oldMode),
+  onModeChange: (newMode, oldMode) => editorUtil.onModeChg(newMode, oldMode, 'input'),
 }
 const outputOpts = {
   name: 'output',
   mode: 'tree',
   modes: ['code', 'form', 'text', 'tree', 'view', 'preview'],
-  onModeChange: (newMode, oldMode) => editorUtil.onModeChg(newMode, oldMode),
+  onModeChange: (newMode, oldMode) => editorUtil.onModeChg(newMode, oldMode, 'output'),
 }
 
 // set default theme
@@ -103,10 +103,10 @@ export default {
 .ts-btn {
   height: 26px;
   width: 26px;
-  border-radius: 3px;
+  border-radius: 2px;
   position: absolute;
   left: 222px;
-  top: 15px;
+  top: 14px;
   line-height: 26px;
   text-align: center;
 

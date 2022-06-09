@@ -4,6 +4,10 @@ import JSONEditor from 'jsoneditor'
 import useConsole from '@/utils/console'
 // element
 import { ElNotification } from 'element-plus'
+// json2ts
+import json2ts from '@cyly/json2ts'
+
+let isTsMode = false
 
 export default () => {
   const editorMap = {}
@@ -34,10 +38,19 @@ export default () => {
       })
   }
   const updateJson = (domId, jsonObj) => {
-    editorMap[domId].update(jsonObj)
+    if ('output' == domId) {
+      let ret = jsonObj
+      if (true === isTsMode) {
+        ret = getTsInterfaceStr(jsonObj)
+      }
+      editorMap[domId].update(ret)
+    }
   }
-  const onModeChg = (newMode, oldMode) => {
+  const onModeChg = (newMode, oldMode, domId) => {
     replaceEditorIcon()
+    if ('output' == domId) {
+      isTsMode = false
+    }
   }
   const replaceEditorIcon = () => {
     const targetClassList = [
@@ -64,10 +77,34 @@ export default () => {
       }
     })
   }
-  const getTsInterfaceByJson = (json) => {}
+  const getTsInterfaceStr = (json) => {
+    return json2ts(json, {
+      parseArray: true,
+      typePrefix: 'I',
+      typeSuffix: '',
+    })
+  }
   const parseJsonToTs = () => {
+    isTsMode = true
     const inputText = editorMap['input'].getText()
-    const tsInf = getTsInterfaceByJson(inputText)
+    try {
+      const tsInterfaceStr = getTsInterfaceStr(inputText)
+      editorMap['output'].setMode('code')
+      editorMap['output'].setText(tsInterfaceStr)
+      ElNotification({
+        title: 'o-json',
+        message: '已转换为TS Interface',
+        type: 'success',
+        customClass: 'o-notification',
+      })
+    } catch (err) {
+      ElNotification({
+        title: 'o-json',
+        message: '请检查JSON格式',
+        type: 'error',
+        customClass: 'o-notification',
+      })
+    }
   }
   return {
     editorMap,
@@ -76,7 +113,6 @@ export default () => {
     onModeChg,
     replaceEditorIcon,
     readClipboard,
-    getTsInterfaceByJson,
     parseJsonToTs,
   }
 }
