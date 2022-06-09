@@ -4,10 +4,7 @@
   }
 
   :deep(.jsoneditor) {
-    @include theme-control {
-      border: 1px solid get-theme-val('layoutBgColor');
-      transition: border-color $g_transitionParam;
-    }
+    border: unset;
 
     border-radius: $g_radius;
     overflow: hidden;

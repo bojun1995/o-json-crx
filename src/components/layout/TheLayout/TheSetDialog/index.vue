@@ -87,7 +87,7 @@ const setForm = ref({
   useAutoReadClipboard: appSetConfig.useAutoReadClipboard,
   useAutoChgTheme: appSetConfig.useAutoChgTheme,
   chgToSunThemeTime: '' == appSetConfig.chgToSunThemeTime ? '09:00' : appSetConfig.chgToSunThemeTime,
-  chgToMoonThemeTime: '' == appSetConfig.chgToMoonThemeTime ? '17:30' : appSetConfig.chgToSunThemeTime,
+  chgToMoonThemeTime: '' == appSetConfig.chgToMoonThemeTime ? '17:30' : appSetConfig.chgToMoonThemeTime,
 })
 
 const doShow = () => {

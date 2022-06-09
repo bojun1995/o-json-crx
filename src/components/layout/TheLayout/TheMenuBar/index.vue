@@ -11,7 +11,6 @@
       <el-input
         v-model="nameInput.nameVal"
         placeholder="输入标签页名"
-        size="normal"
         clearable
         class="o-input"
         @change="nameInput.onValChg"
@@ -60,7 +59,7 @@ const themeSwitch = ref({
   isSunTheme: appStore.cp_themeName,
   onThemeChg: (val) => {
     const themeName = 'sunlight' === val ? 'sunlight' : 'matrix'
-    themeUtil.chgTheme(themeName)
+    themeUtil.chgTheme(themeName, false)
   },
 })
 
@@ -68,13 +67,8 @@ watch(
   () => appStore.cp_themeName,
   () => {
     themeSwitch.value.isSunTheme = appStore.cp_themeName
-    // console.log('do watch = ' + themeSwitch.value.isSunTheme)
   }
 )
-// setTimeout(() => {
-//   themeUtil.chgTheme('sunlight')
-//   // console.log('do setTimeout = ' + themeSwitch.value.isSunTheme)
-// }, 1000)
 
 const nameInput = ref({
   nameVal: '',

@@ -8,17 +8,10 @@
 <script setup>
 // sys
 import { ref } from 'vue'
-import useThemeUtil from '@/utils/theme'
 // comp
 import TheMenuBar from './TheMenuBar/index.vue'
 import TheEditorBox from './TheEditorBox/index.vue'
 import TheSetDialog from './TheSetDialog/index.vue'
-
-// default theme
-const themeUtil = useThemeUtil()
-// themeUtil.chgTheme('sunlight', false)
-// chg themeClock
-themeUtil.chgThemeBySetConfig()
 
 // childRef
 const theSetDialogRef = ref()

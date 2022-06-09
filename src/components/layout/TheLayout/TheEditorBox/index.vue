@@ -6,6 +6,7 @@
       <span>TS</span>
     </div> -->
   </div>
+  <div v-show="isRendering" class="the-editor-rendering"></div>
 </template>
 <script setup>
 // https://github.com/josdejong/jsoneditor/blob/master/docs/api.md
@@ -16,8 +17,11 @@ import { useAppStore } from '@/store/app'
 //util
 import useEditor from '@/utils/editor'
 import useConsole from '@/utils/console'
-const consoleUtil = useConsole()
+import useTheme from '@/utils/theme'
+
 const editorUtil = useEditor()
+const consoleUtil = useConsole()
+const themeUtil = useTheme()
 
 const appStore = useAppStore()
 const setConfig = appStore.getSetConfig()
@@ -52,6 +56,11 @@ const outputOpts = {
   onModeChange: (newMode, oldMode) => editorUtil.onModeChg(newMode, oldMode),
 }
 
+// set default theme
+themeUtil.chgThemeBySetConfig()
+
+const isRendering = ref(true)
+
 onMounted(() => {
   editorUtil.init('input', inputOpts)
   editorUtil.init('output', outputOpts)
@@ -60,6 +69,7 @@ onMounted(() => {
   if (true == setConfig.useAutoReadClipboard) {
     editorUtil.readClipboard('input')
   }
+  isRendering.value = false
 })
 </script>
 <script>
@@ -108,5 +118,13 @@ export default {
     color: #ffffff;
     transition: background-color $g_transitionParam;
   }
+}
+
+.the-editor-rendering {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  @include background-color('layoutBgColor');
+  z-index: 999;
 }
 </style>
