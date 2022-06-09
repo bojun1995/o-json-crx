@@ -59,6 +59,11 @@
         </el-form-item>
       </el-form>
     </div>
+    <template #footer>
+      <span class="dialog-footer">
+        <el-button type="primary" class="o-button" @click="setDialog.onConfirm">保存</el-button>
+      </span>
+    </template>
   </el-dialog>
 </template>
 
@@ -80,6 +85,9 @@ const setDialog = ref({
   onClosed: () => {
     appStore.chgSetConfig(setForm.value)
     themeUtil.chgThemeBySetConfig(false)
+  },
+  onConfirm: () => {
+    setDialog.value.visible = false
   },
 })
 
@@ -110,6 +118,6 @@ export default {
 }
 
 .set-dialog__content {
-  height: 50vh;
+  height: 300px;
 }
 </style>

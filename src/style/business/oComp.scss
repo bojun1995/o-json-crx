@@ -1,5 +1,6 @@
 .o-dialog {
   &.el-dialog {
+    width: 40%;
     border-radius: $g_radius;
     @include background-color('dialogBgColor');
 
@@ -195,5 +196,17 @@
     }
 
     border: unset;
+  }
+}
+
+.o-button {
+  &.el-button {
+    &:hover {
+      color: #ffffff !important;
+      @include background-color('logoColor');
+      @include theme-control {
+        border-color: get-theme-val('logoColor') !important;
+      }
+    }
   }
 }
