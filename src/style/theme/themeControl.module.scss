@@ -15,6 +15,13 @@ $theme-list: (
 	}
 }
 
+// 渲染完手动切换主题才给予过渡时间
+@mixin is-rendered {
+	[data-rendered=true] & {
+		@content;
+	}
+}
+
 @function get-theme-val($theme-key) {
 	@return map-get($theme-obj, $key: $theme-key);
 }
@@ -36,7 +43,9 @@ $theme-list: (
 @mixin background-color($val-key) {
 	@include theme-control {
 		background-color: get-theme-val($val-key);
-    transition: background-color $g_transitionParam;
+	}
+	@include is-rendered {
+		transition: background-color $g_transitionParam;
 	}
 }
 // 背景色 without trans

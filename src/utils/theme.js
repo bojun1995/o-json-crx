@@ -71,7 +71,7 @@ export default () => {
       }
       // 立刻切换
       if (setThemeNow) {
-        consoleUtil.log(`chg2SunDifMills = ${chg2SunDifMills}, chg2MoonDifMills = ${chg2MoonDifMills}`)
+        // consoleUtil.log(`chg2SunDifMills = ${chg2SunDifMills}, chg2MoonDifMills = ${chg2MoonDifMills}`)
         if (chg2SunDifMills > 0 && chg2MoonDifMills > 0) {
           chgTheme('matrix', false)
         }

@@ -1,12 +1,12 @@
 <template>
+  <div v-if="isRendering" class="the-editor-rendering"></div>
   <div class="the-editor-box">
     <div id="input" class="custom-editor editor-input"></div>
     <div id="output" class="custom-editor editor-output"></div>
-    <!-- <div class="ts-btn" @click="tsBtn.onClk">
+    <div class="ts-btn" @click="tsBtn.onClk">
       <span>TS</span>
-    </div> -->
+    </div>
   </div>
-  <div v-show="isRendering" class="the-editor-rendering"></div>
 </template>
 <script setup>
 // https://github.com/josdejong/jsoneditor/blob/master/docs/api.md
@@ -70,6 +70,10 @@ onMounted(() => {
     editorUtil.readClipboard('input')
   }
   isRendering.value = false
+  setTimeout(() => {
+    // isRendering.value = false
+    window.document.documentElement.setAttribute('data-rendered', 'true')
+  }, 1500)
 })
 </script>
 <script>
@@ -116,7 +120,9 @@ export default {
   &:hover {
     background-color: #3179c7;
     color: #ffffff;
-    transition: background-color $g_transitionParam;
+    @include is-rendered {
+      transition: background-color $g_transitionParam;
+    }
   }
 }
 
