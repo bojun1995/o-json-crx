@@ -1,5 +1,4 @@
 <template>
-  <div v-if="isRendering" class="the-editor-rendering"></div>
   <div class="the-editor-box">
     <div id="input" class="custom-editor editor-input"></div>
     <div id="output" class="custom-editor editor-output"></div>
@@ -59,8 +58,6 @@ const outputOpts = {
 // set default theme
 themeUtil.chgThemeBySetConfig()
 
-const isRendering = ref(true)
-
 onMounted(() => {
   editorUtil.init('input', inputOpts)
   editorUtil.init('output', outputOpts)
@@ -69,11 +66,10 @@ onMounted(() => {
   if (true == setConfig.useAutoReadClipboard) {
     editorUtil.readClipboard('input')
   }
-  isRendering.value = false
+  // editor渲染完成后开启过渡时间，防止闪屏
   setTimeout(() => {
-    // isRendering.value = false
     window.document.documentElement.setAttribute('data-rendered', 'true')
-  }, 1500)
+  }, 500)
 })
 </script>
 <script>
