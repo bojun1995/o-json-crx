@@ -17,6 +17,7 @@
   :deep(.jsoneditor-contextmenu) {
     .jsoneditor-menu {
       box-shadow: unset;
+
       & button {
         @include theme-control {
           background-color: get-theme-val('headBgColor') !important;
@@ -224,5 +225,9 @@
 
   :deep(.jsoneditor-icon) {
     top: 2px;
+  }
+
+  :deep(.jsoneditor-treepath-element) {
+    font-family: $g_fontFamily;
   }
 }
