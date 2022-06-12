@@ -99,6 +99,10 @@ export default () => {
         }
       })
     }
+
+    if ('none' == setConfig.useAutoChgTheme) {
+      chgTheme('sunlight', false)
+    }
   }
   const doChg2Sun = (delay = oneDayMills) => {
     chg2SunTimer = setTimeout(() => {

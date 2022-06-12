@@ -28,6 +28,14 @@ export const useAppStore = defineStore('app', {
       const localConfigStr = window.localStorage.getItem(this.configKey)
       if (null !== localConfigStr && undefined !== localConfigStr) {
         this.setConfig = JSON.parse(localConfigStr)
+      } else {
+        // 默认值
+        this.setConfig = {
+          useAutoReadClipboard: true,
+          useAutoChgTheme: 'auto',
+          chgToSunThemeTime: '09:00',
+          chgToMoonThemeTime: '17:30',
+        }
       }
       return this.setConfig
     },
