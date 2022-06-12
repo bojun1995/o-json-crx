@@ -4,8 +4,7 @@
   </a>
 </p>
 
-> JSON解析格式化Chrome插件
-> JSON转换TypeScript Interface
+> JSON解析格式化Chrome插件，JSON转换TypeScript Interfaces
 
 # o-json
 

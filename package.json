@@ -1,7 +1,7 @@
 {
   "name": "o-json-crx",
-  "displayName": "o-json-crx",
-  "description": "Chrome extension",
+  "displayName": "o-json",
+  "description": "JSON Formatter, Convert JSON to TypeScript Interfaces.",
   "private": true,
   "version": "1.0.0",
   "author": "bojun1995@foxmail.com",

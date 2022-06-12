@@ -4,8 +4,7 @@
   </a>
 </p>
 
-> Chrome Extension of JSON Formatter
-> JSON to TypeScript Interface
+> Chrome Extension of JSON Formatter, Convert JSON to TypeScript Interfaces
 
 # o-json
 
