@@ -4,7 +4,8 @@
   </a>
 </p>
 
-> Chrome Extension of JSON Format
+> Chrome Extension of JSON Formatter
+> JSON to TypeScript Interface
 
 # o-json
 
