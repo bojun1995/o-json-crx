@@ -24,6 +24,7 @@
     </div>
     <div class="the-btn-group">
       <el-switch
+        v-show="themeSwitch.isShow"
         v-model="themeSwitch.isSunTheme"
         inline-prompt
         active-value="matrix"
@@ -55,8 +56,10 @@ const emit = defineEmits(['on-set-btn-clk'])
 const appStore = useAppStore()
 
 const themeUtil = useThemeUtil()
+
 const themeSwitch = ref({
-  isSunTheme: appStore.cp_themeName,
+  isSunTheme: '',
+  isShow: false,
   onThemeChg: (val) => {
     const themeName = 'sunlight' === val ? 'sunlight' : 'matrix'
     themeUtil.chgTheme(themeName, false)
@@ -66,6 +69,10 @@ const themeSwitch = ref({
 watch(
   () => appStore.cp_themeName,
   () => {
+    // 初次获取themeName时，如果是夜间会有一个切换的动画，初始化数据后再现实组件
+    if (false == themeSwitch.value.isShow) {
+      themeSwitch.value.isShow = true
+    }
     themeSwitch.value.isSunTheme = appStore.cp_themeName
   }
 )

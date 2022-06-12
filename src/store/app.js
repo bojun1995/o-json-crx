@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 export const useAppStore = defineStore('app', {
   state: () => {
     return {
-      themeName: 'sunlight',
+      themeName: '',
       setConfig: {
         useAutoReadClipboard: true,
         useAutoChgTheme: 'auto',

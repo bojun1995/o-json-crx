@@ -93,7 +93,7 @@ export default () => {
       editorMap['output'].setText(tsInterfaceStr)
       ElNotification({
         title: 'o-json',
-        message: '已转换为TS Interface',
+        message: '已转换为TS Interfaces',
         type: 'success',
         customClass: 'o-notification',
       })

@@ -57,7 +57,7 @@ export default () => {
         clearTimeout(chg2MoonTimer)
         chg2MoonTimer = null
       }
-      // 开启
+      // 开启计时器定时切换
       // consoleUtil.log(`chg2SunDifMills = ${chg2SunDifMills}, chg2MoonDifMills = ${chg2MoonDifMills}`)
       if (chg2SunDifMills >= 0) {
         doChg2Sun(chg2SunDifMills)
