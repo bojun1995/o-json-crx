@@ -31,6 +31,24 @@ const tsBtn = ref({
   },
 })
 
+// const initJson = {
+//   array: [1, 2, 3],
+//   boolean: true,
+//   colorMatrix: '#41b883',
+//   colorSunlight: '#ff6768',
+//   empty: '',
+//   null: null,
+//   number: 10086,
+//   obj: {
+//     value0: 0,
+//     value1: 1,
+//   },
+//   string: 'str',
+//   undefined: undefined,
+// }
+
+const initJson = {}
+
 const inputOpts = {
   // name: 'input',
   mode: 'code',
@@ -59,8 +77,8 @@ const outputOpts = {
 themeUtil.chgThemeBySetConfig()
 
 onMounted(() => {
-  editorUtil.init('input', inputOpts)
-  editorUtil.init('output', outputOpts)
+  editorUtil.init('input', inputOpts, initJson)
+  editorUtil.init('output', outputOpts, initJson)
   editorUtil.replaceEditorIcon()
   // 是否读取剪切板
   if (true == setConfig.useAutoReadClipboard) {

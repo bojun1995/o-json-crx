@@ -85,6 +85,9 @@
     // div {
     //   @include font-color__imp('fontColor');
     // }
+    input {
+      margin-top: 6px;
+    }
   }
 
   :deep(.jsoneditor-highlight) {
