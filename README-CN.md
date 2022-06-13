@@ -6,6 +6,10 @@
 
 > JSON解析格式化Chrome插件，JSON转换TypeScript Interfaces
 
+![GitHub last commit](https://img.shields.io/github/last-commit/bojun1995/o-json-crx?style=for-the-badge)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/bojun1995/o-json-crx?style=for-the-badge)
+![GitHub Release Date](https://img.shields.io/github/release-date/bojun1995/o-json-crx?style=for-the-badge)
+
 # o-json
 
 [EN](https://github.com/bojun1995/o-json-crx/blob/master/README.md) | [中文](https://github.com/bojun1995/o-json-crx/blob/master/README-CN.md)
