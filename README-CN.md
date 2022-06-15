@@ -15,15 +15,15 @@
 [EN](https://github.com/bojun1995/o-json-crx/blob/master/README.md) | [中文](https://github.com/bojun1995/o-json-crx/blob/master/README-CN.md)
 
 ## 使用方式
-#### 1. 本地文件
+
+#### 1. [Chrome插件商店](https://chrome.google.com/webstore/detail/o-json/pjgmamaikjfkchcapppciiabhcgihaha)
+
+#### 2. 本地文件
 
 - 下载[最新releases文件](https://github.com/bojun1995/o-json-crx/releases)
 - 解压
 - Chrome访问 [chrome://extensions/](chrome://extensions/)
 - 加载已解压的扩展程序 选择文件夹
-
-
-#### 2. Chrome插件商店下载(审核中)
 
 
 ## 开发方式

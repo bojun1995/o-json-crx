@@ -16,14 +16,16 @@
 [EN](https://github.com/bojun1995/o-json-crx/blob/master/README.md) | [中文](https://github.com/bojun1995/o-json-crx/blob/master/README-CN.md)
 
 ## Install Instructions
-#### 1. Install Locally
+
+#### 1. Download in [Chrome Web Store](https://chrome.google.com/webstore/detail/o-json/pjgmamaikjfkchcapppciiabhcgihaha)
+
+#### 2. Install Locally
 
 * Download the [Releases](https://github.com/bojun1995/o-json-crx/releases)
 * Unpack the file.
 * Open [chrome://extensions/](chrome://extensions/) in Chrome
 * Load the unpacked releases folder
   
-#### 2. Download in [Chrome Web Store](https://chrome.google.com/)
 
 ## Building locally
 ```
