@@ -180,7 +180,7 @@
   }
 
   :deep(.ace_selection) {
-    @include background-color('editorSelectionColor');
+    @include background-color('logoColor');
   }
 
   :deep(.ace_editor) {
