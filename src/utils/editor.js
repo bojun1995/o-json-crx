@@ -2,6 +2,8 @@
 // doc https://github.com/josdejong/jsoneditor/blob/develop/docs/api.md
 import JSONEditor from 'jsoneditor'
 import useConsole from '@/utils/console'
+// store
+import { useAppStore } from '@/store/app'
 // element
 import { ElNotification } from 'element-plus'
 // json2ts
@@ -12,6 +14,7 @@ let isTsMode = false
 export default () => {
   const editorMap = {}
   const consoleUtil = useConsole
+  const appStore = useAppStore()
   const init = (domId, options, jsonObj) => {
     const container = document.getElementById(domId)
     editorMap[domId] = new JSONEditor(container, options, jsonObj)

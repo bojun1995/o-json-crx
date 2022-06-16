@@ -9,6 +9,9 @@ export const useAppStore = defineStore('app', {
         chgToSunThemeTime: '',
         chgToMoonThemeTime: '',
       },
+      menubar: {
+        pageTitle: '',
+      },
       configKey: 'APP_SET_CFG',
     }
   },
@@ -38,6 +41,9 @@ export const useAppStore = defineStore('app', {
         }
       }
       return this.setConfig
+    },
+    updatePageTitle(val) {
+      this.menubar.pageTitle = val
     },
   },
 })

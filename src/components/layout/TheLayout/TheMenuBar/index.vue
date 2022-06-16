@@ -84,6 +84,7 @@ const nameInput = ref({
     if (val) {
       title = val
     }
+    appStore.updatePageTitle(title)
     document.title = title
   },
 })
