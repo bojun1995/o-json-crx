@@ -48,7 +48,7 @@ yarn releases
 # path after compile is /releases
 ```
 
-## Features
+## Technology Stack
 - Powered by Vite + Vue3
 - Powered by Scss、Pinia
 - Powered by ESLint + Prettier + Husky

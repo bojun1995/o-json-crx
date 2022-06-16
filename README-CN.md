@@ -48,7 +48,7 @@ yarn releases
 # 编译后路径为 /releases
 ```
 
-## 特征
+## 技术栈
 - ✨ Vite + Vue3
 - 使用Scss、Pinia
 - 使用ESLint + Prettier + Husky
