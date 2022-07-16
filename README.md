@@ -30,7 +30,7 @@
 ## Building locally
 ```
 #yarn
-yarn i
+yarn
 
 #npm
 npm i
