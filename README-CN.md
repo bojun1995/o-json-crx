@@ -56,5 +56,5 @@ yarn releases
 
 ## 致谢
 - 脚手架 [vite-crx-vue](https://github.com/keyding/vite-crx-vue)
-- 开发教程 [chrome-plugin-demo](chrome-plugin-demo)
+- 开发教程 [chrome-plugin-demo](https://github.com/sxei/chrome-plugin-demo)
 - 编辑器 [jsoneditor](https://github.com/josdejong/jsoneditor)
