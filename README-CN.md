@@ -30,7 +30,7 @@
 #### 安装依赖
 ```
 #yarn
-yarn i
+yarn
 
 #npm
 npm i
