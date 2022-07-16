@@ -56,5 +56,5 @@ yarn releases
 
 ## Thanks
 - Framework [vite-crx-vue](https://github.com/keyding/vite-crx-vue)
-- Learning from [chrome-plugin-demo](chrome-plugin-demo)
+- Learning from [chrome-plugin-demo](https://github.com/sxei/chrome-plugin-demo)
 - Editor [jsoneditor](https://github.com/josdejong/jsoneditor)
