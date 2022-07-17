@@ -245,10 +245,10 @@
   resolved "https://registry.yarnpkg.com/@ctrl/tinycolor/-/tinycolor-3.4.1.tgz#75b4c27948c81e88ccd3a8902047bcd797f38d32"
   integrity sha512-ej5oVy6lykXsvieQtqZxCOaLT+xD4+QNarq78cIYISHmZXshCvROLudpQN3lfL8G0NL7plMSSK+zlyvCaIJ4Iw==
 
-"@cyly/json2ts@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@cyly/json2ts/-/json2ts-0.1.0.tgz#636b82bfbf160f68ff57f18ba453e96349267fbc"
-  integrity sha512-t/vPC2dx9uB0oPK2yc7Gg+yFKEP8Kmg5NhIyiGN8k0akEHUSzm+RDTHTyzkptPB2PLNOdeXsjpAKmnFSN/NVbQ==
+"@cyly/json2ts@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@cyly/json2ts/-/json2ts-0.1.3.tgz#611a0606b1cae92e716618cb1912ec1a7ab1fe5c"
+  integrity sha512-QYKd9PLiNCGp/KXYcvYevXfsFLLtrHGG5b1OfLBYCID/pU6gmoaszENB1/VUm1gSN0YODk4gxGQNog3If0RNjA==
 
 "@element-plus/icons-vue@^1.1.4":
   version "1.1.4"

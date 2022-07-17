@@ -14,7 +14,7 @@
     "lint-fix": "eslint --fix --ext .js,.ts,.vue src"
   },
   "dependencies": {
-    "@cyly/json2ts": "^0.1.0",
+    "@cyly/json2ts": "^0.1.3",
     "@element-plus/icons-vue": "^2.0.0-beta.1",
     "dayjs": "^1.11.2",
     "element-plus": "^2.2.2",
