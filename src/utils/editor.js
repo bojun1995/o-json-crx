@@ -84,8 +84,10 @@ export default () => {
   const getTsInterfaceStr = (json) => {
     return json2ts(json, {
       parseArray: true,
-      typePrefix: 'I',
+      typePrefix: '',
       typeSuffix: '',
+      optimizeArrayOptional: true,
+      genType: 'interface',
     })
   }
   const parseJsonToTs = () => {
