@@ -1,7 +1,7 @@
 // plugin
 // doc https://github.com/josdejong/jsoneditor/blob/develop/docs/api.md
 import JSONEditor from 'jsoneditor'
-import useConsole from '@/utils/console'
+import { useConsoleUtil } from '@/utils/console'
 // store
 import { useAppStore } from '@/store/app'
 // element
@@ -13,7 +13,7 @@ let isTsMode = false
 
 export default () => {
   const editorMap = {}
-  const consoleUtil = useConsole
+  const consoleUtil = useConsoleUtil()
   const appStore = useAppStore()
   const init = (domId, options, jsonObj) => {
     const container = document.getElementById(domId)
@@ -23,6 +23,7 @@ export default () => {
     navigator.clipboard
       .readText()
       .then((val) => {
+        // consoleUtil.log(val)
         const jsonObj = JSON.parse(val)
         if (jsonObj) {
           editorMap['input'].update(JSON.parse(val))
@@ -34,10 +35,10 @@ export default () => {
             customClass: 'o-notification',
           })
         }
-        consoleUtil().log(`parse clipboard success`)
+        consoleUtil.log(`parse clipboard success`)
       })
       .catch((err) => {
-        consoleUtil().err(`parse clipboard fail: ${err}`)
+        consoleUtil.err(`parse clipboard fail: ${err}`)
       })
   }
   const updateJson = (domId, jsonObj) => {

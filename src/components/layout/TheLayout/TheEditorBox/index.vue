@@ -15,11 +15,11 @@ import { ref, onMounted } from 'vue'
 import { useAppStore } from '@/store/app'
 //util
 import useEditor from '@/utils/editor'
-import useConsole from '@/utils/console'
+import { useConsoleUtil } from '@/utils/console'
 import useTheme from '@/utils/theme'
 
 const editorUtil = useEditor()
-const consoleUtil = useConsole()
+const consoleUtil = useConsoleUtil()
 const themeUtil = useTheme()
 
 const appStore = useAppStore()
@@ -80,14 +80,14 @@ onMounted(() => {
   editorUtil.init('input', inputOpts, initJson)
   editorUtil.init('output', outputOpts, initJson)
   editorUtil.replaceEditorIcon()
-  // 是否读取剪切板
-  if (true == setConfig.useAutoReadClipboard) {
-    editorUtil.readClipboard('input')
-  }
   // editor渲染完成后开启过渡时间，防止闪屏
   setTimeout(() => {
     window.document.documentElement.setAttribute('data-rendered', 'true')
-  }, 500)
+    // 是否读取剪切板
+    if (true == setConfig.useAutoReadClipboard) {
+      editorUtil.readClipboard('input')
+    }
+  }, 200)
 })
 </script>
 <script>

@@ -1,4 +1,4 @@
-export default () => {
+export const useConsoleUtil = () => {
   const padding = `3px 5px`
   const borderRadius = `4px`
   const baseText = 'o-json'

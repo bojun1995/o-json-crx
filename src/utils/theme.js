@@ -3,13 +3,13 @@ import dayjs from 'dayjs'
 // store
 import { useAppStore } from '@/store/app'
 // util
-import useConsole from '@/utils/console'
+import { useConsoleUtil } from '@/utils/console'
 // element
 import { ElNotification } from 'element-plus'
 
 export default () => {
   const appStore = useAppStore()
-  const consoleUtil = useConsole()
+  const consoleUtil = useConsoleUtil()
   const setConfig = appStore.getSetConfig()
   const oneDayMills = 24 * 60 * 60 * 1000
   let chg2MoonTimer = null
