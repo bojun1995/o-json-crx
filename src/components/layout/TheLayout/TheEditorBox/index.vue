@@ -80,14 +80,17 @@ onMounted(() => {
   editorUtil.init('input', inputOpts, initJson)
   editorUtil.init('output', outputOpts, initJson)
   editorUtil.replaceEditorIcon()
-  // editor渲染完成后开启过渡时间，防止闪屏
+  // jsoneditor没有给出渲染完成的事件
   setTimeout(() => {
-    window.document.documentElement.setAttribute('data-rendered', 'true')
     // 是否读取剪切板
     if (true == setConfig.useAutoReadClipboard) {
       editorUtil.readClipboard('input')
     }
   }, 200)
+  // editor渲染完成后开启过渡时间，防止闪屏
+  setTimeout(() => {
+    window.document.documentElement.setAttribute('data-rendered', 'true')
+  }, 500)
 })
 </script>
 <script>
