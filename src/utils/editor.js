@@ -7,7 +7,7 @@ import { useAppStore } from '@/store/app'
 // element
 import { ElNotification } from 'element-plus'
 // json2ts
-import json2ts from '@cyly/json2ts'
+import { json2ts } from '@hzzlyxx/json2ts'
 
 let isTsMode = false
 
@@ -82,13 +82,7 @@ export default () => {
     })
   }
   const getTsInterfaceStr = (json) => {
-    return json2ts(json, {
-      parseArray: true,
-      typePrefix: '',
-      typeSuffix: '',
-      optimizeArrayOptional: true,
-      genType: 'interface',
-    })
+    return json2ts(json)
   }
   const parseJsonToTs = () => {
     isTsMode = true
