@@ -82,7 +82,10 @@ export default () => {
     })
   }
   const getTsInterfaceStr = (json) => {
-    return json2ts(json)
+    let ret = json2ts(json)
+    ret = ret.replaceAll('export ', '')
+    ret = ret.replaceAll(';', '')
+    return ret
   }
   const parseJsonToTs = () => {
     isTsMode = true
