@@ -42,7 +42,7 @@ $theme-list: (
 // 背景色
 @mixin background-color($val-key) {
 	@include theme-control {
-		background-color: get-theme-val($val-key);
+		background-color: get-theme-val($val-key) !important;
 	}
 	@include is-rendered {
 		transition: background-color $g_transitionParam;

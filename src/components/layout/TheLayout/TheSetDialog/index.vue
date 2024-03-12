@@ -4,7 +4,7 @@
     :show-close="false"
     :modal="false"
     :close-on-click-modal="true"
-    custom-class="o-dialog"
+    class="o-dialog"
     @closed="setDialog.onClosed"
   >
     <template #header="{ close, titleId, titleClass }">

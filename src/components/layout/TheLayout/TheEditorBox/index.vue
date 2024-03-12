@@ -3,7 +3,7 @@
     <div id="input" class="custom-editor editor-input"></div>
     <div id="output" class="custom-editor editor-output"></div>
     <div class="ts-btn" @click="tsBtn.onClk">
-      <span title="把JSON转换为TS Interface">TS</span>
+      <span title="把JSON对象排序后转换为TS Interface">TS</span>
     </div>
   </div>
 </template>
@@ -32,6 +32,7 @@ const tsBtn = ref({
 })
 
 // const initJson = {
+//   game: '123123',
 //   array: [1, 2, 3],
 //   boolean: true,
 //   colorMatrix: '#41b883',
@@ -52,7 +53,7 @@ const initJson = {}
 const inputOpts = {
   // name: 'input',
   mode: 'code',
-  // modes: ['code', 'form', 'text', 'tree', 'view', 'preview'],
+  modes: ['code', 'form', 'text', 'tree', 'view', 'preview'],
   onChangeText: (text) => {
     try {
       const jsonObj = Object.assign({}, JSON.parse(text))
@@ -115,6 +116,12 @@ export default {
 .editor-input {
   width: 30%;
   margin-right: 10px;
+  :deep(.jsoneditor-menu) {
+    padding-right: 50px;
+  }
+  :deep(.jsoneditor-search) {
+    right: 40px;
+  }
 }
 .editor-output {
   width: 70%;
@@ -126,7 +133,7 @@ export default {
   width: 26px;
   border-radius: 2px;
   position: absolute;
-  left: 222px;
+  left: 582px;
   top: 14px;
   line-height: 26px;
   text-align: center;

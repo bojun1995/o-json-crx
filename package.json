@@ -3,7 +3,7 @@
   "displayName": "o-json",
   "description": "JSON Formatter, Convert JSON to TypeScript Interfaces.",
   "private": true,
-  "version": "1.1.1",
+  "version": "1.2.1",
   "author": "bojun1995@foxmail.com",
   "scripts": {
     "dev": "rimraf dist && vite",

@@ -2,19 +2,16 @@
 // doc https://github.com/josdejong/jsoneditor/blob/develop/docs/api.md
 import JSONEditor from 'jsoneditor'
 import { useConsoleUtil } from '@/utils/console'
-// store
-import { useAppStore } from '@/store/app'
 // element
 import { ElNotification } from 'element-plus'
 // json2ts
 import { json2ts } from '@hzzlyxx/json2ts'
 
 let isTsMode = false
+const editorMap = {}
 
 export default () => {
-  const editorMap = {}
   const consoleUtil = useConsoleUtil()
-  const appStore = useAppStore()
   const init = (domId, options, jsonObj) => {
     const container = document.getElementById(domId)
     editorMap[domId] = new JSONEditor(container, options, jsonObj)
@@ -91,7 +88,14 @@ export default () => {
     isTsMode = true
     const inputText = editorMap['input'].getText()
     try {
-      const tsInterfaceStr = getTsInterfaceStr(inputText)
+      // 排序
+      const unSortObj = JSON.parse(inputText)
+      const keys = Object.keys(unSortObj).sort()
+      const sortObj = {}
+      keys.forEach((key) => {
+        sortObj[key] = unSortObj[key]
+      })
+      const tsInterfaceStr = getTsInterfaceStr(JSON.stringify(sortObj))
       editorMap['output'].setMode('code')
       editorMap['output'].setText(tsInterfaceStr)
       ElNotification({
