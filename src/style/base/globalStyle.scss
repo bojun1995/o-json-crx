@@ -9,3 +9,25 @@ body {
   width: 100%;
   font-family: $g_fontFamily;
 }
+
+.ts-btn {
+  height: 26px;
+  width: 26px;
+  border-radius: 2px;
+  position: absolute;
+  right: 5px;
+  top: 4px;
+  line-height: 26px;
+  text-align: center;
+
+  user-select: none;
+  @include font-color('fontColor');
+
+  &:hover {
+    background-color: #3179c7;
+    color: #ffffff;
+    @include is-rendered {
+      transition: background-color $g_transitionParam;
+    }
+  }
+}

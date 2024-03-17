@@ -2,15 +2,12 @@
   <div class="the-editor-box">
     <div id="input" class="custom-editor editor-input"></div>
     <div id="output" class="custom-editor editor-output"></div>
-    <div class="ts-btn" @click="tsBtn.onClk">
-      <span title="把JSON对象排序后转换为TS Interface">TS</span>
-    </div>
   </div>
 </template>
 <script setup>
 // https://github.com/josdejong/jsoneditor/blob/master/docs/api.md
 // sys
-import { ref, onMounted } from 'vue'
+import { onMounted } from 'vue'
 // store
 import { useAppStore } from '@/store/app'
 //util
@@ -24,12 +21,6 @@ const themeUtil = useTheme()
 
 const appStore = useAppStore()
 const setConfig = appStore.getSetConfig()
-
-const tsBtn = ref({
-  onClk: () => {
-    editorUtil.parseJsonToTs()
-  },
-})
 
 // const initJson = {
 //   game: '123123',
@@ -77,10 +68,22 @@ const outputOpts = {
 // set default theme
 themeUtil.chgThemeBySetConfig()
 
+function initTsBtn() {
+  const parentDom = document.getElementsByClassName('editor-input')[0].querySelectorAll('.jsoneditor-menu')[0]
+  const btnDom = document.createElement('div')
+  btnDom.setAttribute('class', 'ts-btn')
+  btnDom.addEventListener('click', editorUtil.parseJsonToTs)
+  btnDom.innerHTML = `
+    <span title="把JSON对象排序后转换为TS Interface">TS</span>
+  `
+  parentDom.appendChild(btnDom)
+}
+
 onMounted(() => {
   editorUtil.init('input', inputOpts, initJson)
   editorUtil.init('output', outputOpts, initJson)
   editorUtil.replaceEditorIcon()
+  // initTsBtn()
   // jsoneditor没有给出渲染完成的事件
   setTimeout(() => {
     // 是否读取剪切板

@@ -15,6 +15,19 @@ export default () => {
   const init = (domId, options, jsonObj) => {
     const container = document.getElementById(domId)
     editorMap[domId] = new JSONEditor(container, options, jsonObj)
+    if (domId === 'input') {
+      initTsBtn()
+    }
+  }
+  const initTsBtn = () => {
+    const parentDom = document.getElementsByClassName('editor-input')[0].querySelectorAll('.jsoneditor-menu')[0]
+    const btnDom = document.createElement('div')
+    btnDom.setAttribute('class', 'ts-btn')
+    btnDom.addEventListener('click', parseJsonToTs)
+    btnDom.innerHTML = `
+      <span title="把JSON对象排序后转换为TS Interface">TS</span>
+    `
+    parentDom.appendChild(btnDom)
   }
   const readClipboard = (domId) => {
     navigator.clipboard
@@ -51,6 +64,8 @@ export default () => {
     replaceEditorIcon()
     if ('output' == domId) {
       isTsMode = false
+    } else {
+      initTsBtn()
     }
   }
   const replaceEditorIcon = () => {
